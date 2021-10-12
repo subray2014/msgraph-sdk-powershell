@@ -37,6 +37,20 @@ $OutputTypePattern = 'OutputType\(typeof\(Microsoft\.Graph\.PowerShell\.Models\.
 $ActionFunctionFQNPattern = "\/Microsoft.Graph.(.*)$"
 $PermissionsUrl = "https://graphexplorerapi.azurewebsites.net/permissions"
 
+$v1EntityRelationShipJson = Invoke-RestMethod -Method Get -Uri "https://metadataexplorerstorage.blob.core.windows.net/`$web/cleanv1.js"
+$v1EntityRelationShipJson = $v1EntityRelationShipJson.TrimStart("const json = ")
+$TargetIndex = $v1EntityRelationShipJson.IndexOf(";")
+$v1EntityRelationShipJson = $v1EntityRelationShipJson.Remove($TargetIndex)
+
+$v1EntityRelationships = $v1EntityRelationShipJson | ConvertFrom-Json
+
+$betaEntityRelationShipJson = Invoke-RestMethod -Method Get -Uri "https://metadataexplorerstorage.blob.core.windows.net/`$web/cleanbeta.js"
+$betaEntityRelationShipJson = $betaEntityRelationShipJson.TrimStart("const json = ")
+$TargetIndex = $betaEntityRelationShipJson.IndexOf(";")
+$betaEntityRelationShipJson = $betaEntityRelationShipJson.Remove($TargetIndex)
+
+$betaEntityRelationships = $betaEntityRelationShipJson | ConvertFrom-Json
+
 Write-Debug "Crawling cmdlets in $CmdletPathPattern."
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { $_.Attributes -ne "Directory" } | ForEach-Object {
@@ -72,6 +86,7 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
             OutputType  = $null
             Module      = $ModuleName
             Permissions = @()
+            DerivedTypes = @()
         }
 
         if ($RawFileContent -match $ProfilePattern) {
@@ -80,6 +95,16 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
 
         if ($RawFileContent -match $OutputTypePattern) {
             $MappingValue.OutputType = $Matches.1
+            $TypeName = $MappingValue.OutputType -replace "IMicrosoftGraph|[\d-]", ""
+            $DerivedTypes = @()
+            # Find all derived types of OutputType.
+            if ($MappingValue.ApiVersion -eq "v1.0") {
+                $DerivedTypes = $v1EntityRelationships | Where-Object BaseType -eq $TypeName | Select-Object -ExpandProperty Name
+            } else {
+                $DerivedTypes = $betaEntityRelationships | Where-Object BaseType -eq $TypeName | Select-Object -ExpandProperty Name
+            }
+
+            if ($DerivedTypes -ne $null) { $MappingValue.DerivedTypes =  $DerivedTypes }
         }
 
         # Disambiguate between /users (Get-MgUser) and /users/{id} (Get-MgUser) by variant name (parameterset) i.e., List and Get.

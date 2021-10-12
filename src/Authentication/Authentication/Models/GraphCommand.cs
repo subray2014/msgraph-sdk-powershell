@@ -34,6 +34,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// </summary>
         string OutputType { get; set; }
         /// <summary>
+        /// All possible derived types of the OutputType. This can be used to filter responses by types using "@Odata.Type" property.
+        /// </summary>
+        string[] DerivedTypes { get; set; }
+        /// <summary>
         /// The parameter sets of the command.
         /// </summary>
         string[] Variants { get; set; }
@@ -72,6 +76,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// The response type of the command.
         /// </summary>
         public string OutputType { get; set; }
+        /// <summary>
+        /// All possible derived types of the OutputType. This can be used to filter responses by types using "@Odata.Type" property.
+        /// </summary>
+        public string[] DerivedTypes { get; set; }
         /// <summary>
         /// The parameter sets of the command.
         /// </summary>

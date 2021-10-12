@@ -64,6 +64,9 @@
                 <PropertyName>OutputType</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>DerivedTypes</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>Permissions</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
