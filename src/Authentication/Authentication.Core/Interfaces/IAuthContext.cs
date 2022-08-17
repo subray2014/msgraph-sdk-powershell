@@ -23,6 +23,12 @@ namespace Microsoft.Graph.PowerShell.Authentication
         CurrentUser
     }
 
+    public enum SigninUi
+    {
+        Browser,
+        Native
+    }
+
     public enum TokenCredentialType
     {
         InteractiveBrowser,
@@ -51,5 +57,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         Version PSHostVersion { get; set; }
         TimeSpan ClientTimeout { get; set; }
         SecureString ClientSecret { get; set; }
+        SigninUi SigninUi { get; set; }
     }
 }
