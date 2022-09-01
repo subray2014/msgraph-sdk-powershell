@@ -3820,6 +3820,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.retrieveRemoteHelpSession(sessionKey=''{sessionKey}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function retrieveRemoteHelpSession
+      operationId: users.managedDevices_retrieveRemoteHelpSession
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: sessionKey
+          in: path
+          description: 'Usage: sessionKey=''{sessionKey}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.retrieveRemoteHelpSessionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/managedDevices/microsoft.graph.appDiagnostics(upn=''{upn}'')':
     get:
       tags:
@@ -4128,6 +4166,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedAppDiagnosticStatuses
+      description: Gets diagnostics validation status for a given user.
       operationId: users_getManagedAppDiagnosticStatuses
       parameters:
         - name: user-id
@@ -4160,6 +4199,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedAppPolicies
+      description: Gets app restrictions for a given user.
       operationId: users_getManagedAppPolicies
       parameters:
         - name: user-id
@@ -4192,6 +4232,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedDevicesWithAppFailures
+      description: Retrieves the list of devices with failed apps
       operationId: users_getManagedDevicesGraphWPreAppFailures
       parameters:
         - name: user-id
@@ -4225,6 +4266,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedDevicesWithFailedOrPendingApps
+      description: Retrieves the list of devices with failed or pending apps
       operationId: users_getManagedDevicesGraphWPreFailedOrPendingApps
       parameters:
         - name: user-id
@@ -4257,6 +4299,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function isManagedAppUserBlocked
+      description: Gets the blocked state of a managed app user.
       operationId: users_isManagedAppUserBlocked
       parameters:
         - name: user-id
@@ -5294,50 +5337,40 @@ components:
           properties:
             activationUrl:
               type: string
-              description: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
             activitySourceHost:
               type: string
-              description: 'Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.'
             appActivityId:
               type: string
-              description: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
             appDisplayName:
               type: string
-              description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
               $ref: '#/components/schemas/microsoft.graph.Json'
             contentUrl:
               type: string
-              description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object expired on the server.
               format: date-time
               nullable: true
             fallbackUrl:
               type: string
-              description: 'Optional. URL used to launch the activity in a web-based app, if available.'
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
-              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             visualElements:
               $ref: '#/components/schemas/microsoft.graph.visualInfo'
@@ -5345,7 +5378,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
           additionalProperties:
             type: object
     microsoft.graph.consentRequestFilterByCurrentUserOptions:
@@ -5394,7 +5426,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
-              description: A list of pending user consent requests.
+              description: A list of pending user consent requests. Supports $filter (eq).
           additionalProperties:
             type: object
     microsoft.graph.approvalFilterByCurrentUserOptions:
@@ -5691,9 +5723,11 @@ components:
         eventDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Indicates the date and time when this event was created. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
         eventName:
           type: string
+          description: Name of the event.
           nullable: true
         eventResult:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventResult'
@@ -5701,6 +5735,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventType'
         message:
           type: string
+          description: Additional message for this event.
           nullable: true
       additionalProperties:
         type: object
@@ -6957,6 +6992,10 @@ components:
           type: string
           description: The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
           nullable: true
+        azureStorageContainerName:
+          type: string
+          description: The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.
+          nullable: true
         inReview:
           type: boolean
           description: True if the Cloud PC is set to in review by the administrator.
@@ -7067,6 +7106,42 @@ components:
       additionalProperties:
         type: object
       description: OEM Warranty information for a given device
+    microsoft.graph.retrieveRemoteHelpSessionResponse:
+      title: retrieveRemoteHelpSessionResponse
+      type: object
+      properties:
+        acsGroupId:
+          type: string
+          description: ACS Group Id
+        acsHelperUserId:
+          type: string
+          description: Helper ACS User Id
+        acsHelperUserToken:
+          type: string
+          description: Helper ACS User Token
+        acsSharerUserId:
+          type: string
+          description: Sharer ACS User Id
+        deviceName:
+          type: string
+          description: Android Device Name
+        pubSubGroupId:
+          type: string
+          description: Azure Pubsub Group Id
+        pubSubHelperAccessUri:
+          type: string
+          description: Azure Pubsub Group Id
+        sessionExpirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Azure Pubsub Session Expiration Date Time.
+          format: date-time
+        sessionKey:
+          type: string
+          description: The unique identifier for a session
+      additionalProperties:
+        type: object
+      description: Remote help - response we provide back to the helper on retrieve session API call
     microsoft.graph.powerliftIncidentMetadata:
       title: powerliftIncidentMetadata
       type: object
@@ -8169,6 +8244,11 @@ components:
               type: string
               description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
               nullable: true
+            employeeLeaveDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
             employeeType:
@@ -8465,7 +8545,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
-              description: A collection of this user's license details. Read-only.
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -8657,7 +8736,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
-              description: The user's activities across devices. Read-only. Nullable.
             devices:
               type: array
               items:
@@ -8740,43 +8818,36 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
-              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             activity:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
@@ -8872,10 +8943,8 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The categories associated with the item
             changeKey:
               type: string
-              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -9681,7 +9750,6 @@ components:
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Details about when the activity took place. Read-only.
               format: date-time
               nullable: true
             actor:
@@ -9705,7 +9773,6 @@ components:
               format: date-time
             description:
               type: string
-              description: Provides a user-visible description of the item. Optional.
               nullable: true
             eTag:
               type: string
@@ -9969,7 +10036,6 @@ components:
       properties:
         type:
           type: string
-          description: 'A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.'
           nullable: true
       additionalProperties:
         type: object
@@ -10250,7 +10316,6 @@ components:
           nullable: true
         frameRate:
           type: number
-          description: Frame rate of the video.
           format: double
           nullable: true
         height:
@@ -11826,6 +11891,10 @@ components:
           type: string
           description: Configuration Manager Client Id from SCCM
           nullable: true
+        clientVersion:
+          type: string
+          description: Configuration Manager Client version from SCCM
+          nullable: true
         isBlocked:
           type: boolean
           description: Configuration Manager Client blocked status from SCCM
@@ -12991,6 +13060,12 @@ components:
               type: string
               description: Name of the discovered application. Read-only
               nullable: true
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.detectedAppPlatformType'
+            publisher:
+              type: string
+              description: 'Indicates the publisher of the discovered application. For example: ''Microsoft''.  The default value is an empty string.'
+              nullable: true
             sizeInByte:
               type: integer
               description: Discovered application size in bytes. Read-only
@@ -13255,11 +13330,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -13316,7 +13391,7 @@ components:
           properties:
             query:
               type: string
-              description: The query specifying who will be the reviewer. See table for examples.
+              description: The query specifying who will be the reviewer.
               nullable: true
             queryRoot:
               type: string
@@ -14118,6 +14193,8 @@ components:
               description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
               nullable: true
+            verifiedPublisher:
+              $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
             appManagementPolicies:
               type: array
               items:
@@ -14157,7 +14234,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
-              description: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -14774,7 +14850,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
             recentPlans:
               type: array
               items:
@@ -16510,12 +16585,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of field definitions for this list.
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
-              description: The collection of content types present in this list.
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             items:
@@ -16800,12 +16873,10 @@ components:
           properties:
             content:
               type: string
-              description: The content stream
               format: base64url
               nullable: true
             contentUrl:
               type: string
-              description: The URL for downloading the content
               nullable: true
           additionalProperties:
             type: object
@@ -18007,6 +18078,59 @@ components:
           additionalProperties:
             type: object
           description: The security baseline compliance state of a setting for a device
+    microsoft.graph.detectedAppPlatformType:
+      title: detectedAppPlatformType
+      enum:
+        - unknown
+        - windows
+        - windowsMobile
+        - windowsHolographic
+        - ios
+        - macOS
+        - chromeOS
+        - androidOSP
+        - androidDeviceAdministrator
+        - androidWorkProfile
+        - androidDedicatedAndFullyManaged
+      type: string
+      description: 'Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).'
+      x-ms-enum:
+        name: detectedAppPlatformType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Set to unknown when platform cannot be determined.
+            name: unknown
+          - value: windows
+            description: Indicates that the platform of the detected application is Windows.
+            name: windows
+          - value: windowsMobile
+            description: Indicates that the platform of the detected application is Windows Mobile.
+            name: windowsMobile
+          - value: windowsHolographic
+            description: Indicates that the platform of the detected application is Windows Holographic.
+            name: windowsHolographic
+          - value: ios
+            description: Indicates that the platform of the detected application is iOS.
+            name: ios
+          - value: macOS
+            description: Indicates that the platform of the detected application is macOS.
+            name: macOS
+          - value: chromeOS
+            description: Indicates that the platform of the detected application is ChromeOS.
+            name: chromeOS
+          - value: androidOSP
+            description: Indicates that the platform of the detected application is Android open source project.
+            name: androidOSP
+          - value: androidDeviceAdministrator
+            description: Indicates that the platform of the detected application is Android device administrator.
+            name: androidDeviceAdministrator
+          - value: androidWorkProfile
+            description: Indicates that the platform of the detected application is Android work profile.
+            name: androidWorkProfile
+          - value: androidDedicatedAndFullyManaged
+            description: Indicates that the platform of the detected application is Android dedicated and fully managed.
+            name: androidDedicatedAndFullyManaged
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -18506,11 +18630,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
+          description: 'A list of failed health check items. If the status property is available, this property will be empty.'
         status:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
       additionalProperties:
         type: object
@@ -18921,6 +19047,26 @@ components:
         relayState:
           type: string
           description: The relative URI the service provider would redirect to after completion of the single sign-on flow.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.verifiedPublisher:
+      title: verifiedPublisher
+      type: object
+      properties:
+        addedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the verified publisher was first added or most recently updated.
+          format: date-time
+          nullable: true
+        displayName:
+          type: string
+          description: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
+          nullable: true
+        verifiedPublisherId:
+          type: string
+          description: The ID of the verified publisher from the app publisher's Partner Center account.
           nullable: true
       additionalProperties:
         type: object
@@ -20658,12 +20804,12 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             password:
@@ -21066,7 +21212,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookSortField'
-              description: Represents the current conditions used to last sort the table. Read-only.
             matchCase:
               type: boolean
               description: Represents whether the casing impacted the last sort of the table. Read-only.
@@ -21536,14 +21681,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             displayName:
               type: string
-              description: The name of the notebook.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -21611,7 +21754,6 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -21634,7 +21776,6 @@ components:
           properties:
             self:
               type: string
-              description: The endpoint where you can get details about the page. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -21737,7 +21878,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
               type: string
-              description: Verbose description of the application.
               nullable: true
             displayName:
               type: string
@@ -22554,21 +22694,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printerDefaults'
             displayName:
               type: string
-              description: The name of the printer/printerShare.
               nullable: true
             isAcceptingJobs:
               type: boolean
-              description: Whether the printer/printerShare is currently accepting new print jobs.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
             manufacturer:
               type: string
-              description: The manufacturer of the printer/printerShare.
               nullable: true
             model:
               type: string
-              description: The model name of the printer/printerShare.
               nullable: true
             name:
               type: string
@@ -22579,7 +22715,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
-              description: The list of jobs that are queued for printing by the printer/printerShare.
           additionalProperties:
             type: object
     microsoft.graph.printerShareViewpoint:
@@ -22653,12 +22788,15 @@ components:
       properties:
         additionalDetails:
           type: string
+          description: Additional message for this health check.
           nullable: true
         displayName:
           type: string
+          description: The connectivity health check item name.
         lastHealthCheckDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         result:
@@ -22864,11 +23002,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

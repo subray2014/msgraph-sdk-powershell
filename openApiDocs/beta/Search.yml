@@ -565,6 +565,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
+      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
       operationId: external.connections.groups_ListMembers
       parameters:
         - name: externalConnection-id
@@ -677,6 +678,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
+      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
       operationId: external.connections.groups_GetMembers
       parameters:
         - name: externalConnection-id
@@ -1056,6 +1058,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get activities from external
+      description: Write-only property. Returns results.
       operationId: external.connections.items_ListActivities
       parameters:
         - name: externalConnection-id
@@ -1173,6 +1176,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get activities from external
+      description: Write-only property. Returns results.
       operationId: external.connections.items_GetActivities
       parameters:
         - name: externalConnection-id
@@ -1324,6 +1328,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get performedBy from external
+      description: Represents an identity used to identify who is responsible for the activity.
       operationId: external.connections.items.activities_GetPerformedGraphBPre
       parameters:
         - name: externalConnection-id
@@ -1885,6 +1890,7 @@ paths:
       tags:
         - search.acronym
       summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
       operationId: search_ListAcronyms
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1986,6 +1992,7 @@ paths:
       tags:
         - search.acronym
       summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
       operationId: search_GetAcronyms
       parameters:
         - name: acronym-id
@@ -2091,6 +2098,7 @@ paths:
       tags:
         - search.bookmark
       summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_ListBookmarks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2219,6 +2227,7 @@ paths:
       tags:
         - search.bookmark
       summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_GetBookmarks
       parameters:
         - name: bookmark-id
@@ -2371,6 +2380,7 @@ paths:
       tags:
         - search.qna
       summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
       operationId: search_ListQnas
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2493,6 +2503,7 @@ paths:
       tags:
         - search.qna
       summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
       operationId: search_GetQnas
       parameters:
         - name: qna-id

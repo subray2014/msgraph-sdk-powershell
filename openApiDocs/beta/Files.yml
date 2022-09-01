@@ -11,6 +11,7 @@ paths:
       tags:
         - drives.drive
       summary: Get Drive
+      description: 'Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.'
       operationId: drives.drive_ListDrive
       parameters:
         - $ref: '#/components/parameters/top'
@@ -151,6 +152,7 @@ paths:
       tags:
         - drives.drive
       summary: Get Drive
+      description: 'Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.'
       operationId: drives.drive_GetDrive
       parameters:
         - name: drive-id
@@ -324,6 +326,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Get activities from drives
+      description: The list of recent activities that took place under this drive.
       operationId: drives_ListActivities
       parameters:
         - name: drive-id
@@ -432,6 +435,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Get activities from drives
+      description: The list of recent activities that took place under this drive.
       operationId: drives_GetActivities
       parameters:
         - name: drive-id
@@ -737,6 +741,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Get content for the navigation property driveItem from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.activities_GetDriveItemContent
       parameters:
         - name: drive-id
@@ -768,6 +773,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Update content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.activities_SetDriveItemContent
       parameters:
         - name: drive-id
@@ -927,6 +933,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get bundles from drives
+      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: drives_ListBundles
       parameters:
         - name: drive-id
@@ -1119,6 +1126,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get bundles from drives
+      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: drives_GetBundles
       parameters:
         - name: drive-id
@@ -1287,6 +1295,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property bundles from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives_GetBundlesContent
       parameters:
         - name: drive-id
@@ -1318,6 +1327,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property bundles in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives_SetBundlesContent
       parameters:
         - name: drive-id
@@ -1353,6 +1363,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get following from drives
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: drives_ListFollowing
       parameters:
         - name: drive-id
@@ -1545,6 +1556,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get following from drives
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: drives_GetFollowing
       parameters:
         - name: drive-id
@@ -1713,6 +1725,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property following from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives_GetFollowingContent
       parameters:
         - name: drive-id
@@ -1744,6 +1757,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property following in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives_SetFollowingContent
       parameters:
         - name: drive-id
@@ -1779,6 +1793,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get items from drives
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: drives_ListItems
       parameters:
         - name: drive-id
@@ -2001,6 +2016,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get items from drives
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: drives_GetItems
       parameters:
         - name: drive-id
@@ -2263,6 +2279,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get activities from drives
+      description: The list of recent activities that took place on this item.
       operationId: drives.items_ListActivities
       parameters:
         - name: drive-id
@@ -2348,6 +2365,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get activities from drives
+      description: The list of recent activities that took place on this item.
       operationId: drives.items_GetActivities
       parameters:
         - name: drive-id
@@ -2430,6 +2448,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get analytics from drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drives.items_GetAnalytics
       parameters:
         - name: drive-id
@@ -2507,6 +2526,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get children from drives
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: drives.items_ListChildren
       parameters:
         - name: drive-id
@@ -2706,6 +2726,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get children from drives
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: drives.items_GetChildren
       parameters:
         - name: drive-id
@@ -2892,6 +2913,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property children from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.items_GetChildrenContent
       parameters:
         - name: drive-id
@@ -2930,6 +2952,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property children in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.items_SetChildrenContent
       parameters:
         - name: drive-id
@@ -2972,6 +2995,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property items from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives_GetItemsContent
       parameters:
         - name: drive-id
@@ -3003,6 +3027,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property items in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives_SetItemsContent
       parameters:
         - name: drive-id
@@ -3038,6 +3063,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get listItem from drives
+      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: drives.items_GetListItem
       parameters:
         - name: drive-id
@@ -3230,6 +3256,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get activities from drives
+      description: The list of recent activities that took place on this item.
       operationId: drives.items.listItem_ListActivities
       parameters:
         - name: drive-id
@@ -3352,6 +3379,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get activities from drives
+      description: The list of recent activities that took place on this item.
       operationId: drives.items.listItem_GetActivities
       parameters:
         - name: drive-id
@@ -3698,6 +3726,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property driveItem from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.items.listItem.activities_GetDriveItemContent
       parameters:
         - name: drive-id
@@ -3736,6 +3765,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.items.listItem.activities_SetDriveItemContent
       parameters:
         - name: drive-id
@@ -3917,6 +3947,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get analytics from drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drives.items.listItem_GetAnalytics
       parameters:
         - name: drive-id
@@ -3994,6 +4025,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get documentSetVersions from drives
+      description: Version information for a document set version created by a user.
       operationId: drives.items.listItem_ListDocumentSetVersions
       parameters:
         - name: drive-id
@@ -4129,6 +4161,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get documentSetVersions from drives
+      description: Version information for a document set version created by a user.
       operationId: drives.items.listItem_GetDocumentSetVersions
       parameters:
         - name: drive-id
@@ -4322,6 +4355,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get driveItem from drives
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: drives.items.listItem_GetDriveItem
       parameters:
         - name: drive-id
@@ -4490,6 +4524,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property driveItem from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.items.listItem_GetDriveItemContent
       parameters:
         - name: drive-id
@@ -4521,6 +4556,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.items.listItem_SetDriveItemContent
       parameters:
         - name: drive-id
@@ -4556,6 +4592,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get fields from drives
+      description: The values of the columns set on this list item.
       operationId: drives.items.listItem_GetFields
       parameters:
         - name: drive-id
@@ -4798,6 +4835,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
+      description: The list of previous versions of the list item.
       operationId: drives.items.listItem_ListVersions
       parameters:
         - name: drive-id
@@ -4918,6 +4956,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
+      description: The list of previous versions of the list item.
       operationId: drives.items.listItem_GetVersions
       parameters:
         - name: drive-id
@@ -5072,6 +5111,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get fields from drives
+      description: A collection of the fields and values for this version of the list item.
       operationId: drives.items.listItem.versions_GetFields
       parameters:
         - name: drive-id
@@ -5977,6 +6017,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get permissions from drives
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: drives.items_ListPermissions
       parameters:
         - name: drive-id
@@ -6119,6 +6160,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get permissions from drives
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: drives.items_GetPermissions
       parameters:
         - name: drive-id
@@ -6392,6 +6434,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get subscriptions from drives
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: drives.items_ListSubscriptions
       parameters:
         - name: drive-id
@@ -6546,6 +6589,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get subscriptions from drives
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: drives.items_GetSubscriptions
       parameters:
         - name: drive-id
@@ -6738,6 +6782,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get thumbnails from drives
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: drives.items_ListThumbnails
       parameters:
         - name: drive-id
@@ -6859,6 +6904,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get thumbnails from drives
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: drives.items_GetThumbnails
       parameters:
         - name: drive-id
@@ -7003,6 +7049,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: drives.items_ListVersions
       parameters:
         - name: drive-id
@@ -7127,6 +7174,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: drives.items_GetVersions
       parameters:
         - name: drive-id
@@ -7389,6 +7437,7 @@ paths:
       tags:
         - drives.list
       summary: Get list from drives
+      description: 'For drives in SharePoint, the underlying document library list. Read-only. Nullable.'
       operationId: drives_GetList
       parameters:
         - name: drive-id
@@ -7555,6 +7604,7 @@ paths:
       tags:
         - drives.list
       summary: Get activities from drives
+      description: The recent activities that took place within this list.
       operationId: drives.list_ListActivities
       parameters:
         - name: drive-id
@@ -8011,6 +8061,7 @@ paths:
       tags:
         - drives.list
       summary: Get sourceColumn from drives
+      description: The source column for content type column.
       operationId: drives.list.columns_GetSourceColumn
       parameters:
         - name: drive-id
@@ -8431,6 +8482,7 @@ paths:
       tags:
         - drives.list
       summary: Get base from drives
+      description: Parent contentType from which this content type is derived.
       operationId: drives.list.contentTypes_GetBase
       parameters:
         - name: drive-id
@@ -8536,6 +8588,7 @@ paths:
       tags:
         - drives.list
       summary: Get baseTypes from drives
+      description: The collection of content types that are ancestors of this content type.
       operationId: drives.list.contentTypes_ListBaseTypes
       parameters:
         - name: drive-id
@@ -8660,6 +8713,7 @@ paths:
       tags:
         - drives.list
       summary: Get baseTypes from drives
+      description: The collection of content types that are ancestors of this content type.
       operationId: drives.list.contentTypes_GetBaseTypes
       parameters:
         - name: drive-id
@@ -8777,6 +8831,7 @@ paths:
       tags:
         - drives.list
       summary: Get columnLinks from drives
+      description: The collection of columns that are required by this content type
       operationId: drives.list.contentTypes_ListColumnLinks
       parameters:
         - name: drive-id
@@ -8889,6 +8944,7 @@ paths:
       tags:
         - drives.list
       summary: Get columnLinks from drives
+      description: The collection of columns that are required by this content type
       operationId: drives.list.contentTypes_GetColumnLinks
       parameters:
         - name: drive-id
@@ -9030,6 +9086,7 @@ paths:
       tags:
         - drives.list
       summary: Get columnPositions from drives
+      description: Column order information in a content type.
       operationId: drives.list.contentTypes_ListColumnPositions
       parameters:
         - name: drive-id
@@ -9197,6 +9254,7 @@ paths:
       tags:
         - drives.list
       summary: Get columnPositions from drives
+      description: Column order information in a content type.
       operationId: drives.list.contentTypes_GetColumnPositions
       parameters:
         - name: drive-id
@@ -9299,6 +9357,7 @@ paths:
       tags:
         - drives.list
       summary: Get columns from drives
+      description: The collection of column definitions for this contentType.
       operationId: drives.list.contentTypes_ListColumns
       parameters:
         - name: drive-id
@@ -9503,6 +9562,7 @@ paths:
       tags:
         - drives.list
       summary: Get columns from drives
+      description: The collection of column definitions for this contentType.
       operationId: drives.list.contentTypes_GetColumns
       parameters:
         - name: drive-id
@@ -9683,6 +9743,7 @@ paths:
       tags:
         - drives.list
       summary: Get sourceColumn from drives
+      description: The source column for content type column.
       operationId: drives.list.contentTypes.columns_GetSourceColumn
       parameters:
         - name: drive-id
@@ -10067,6 +10128,7 @@ paths:
       tags:
         - drives.list
       summary: Get drive from drives
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: drives.list_GetDrive
       parameters:
         - name: drive-id
@@ -10184,6 +10246,7 @@ paths:
       tags:
         - drives.list
       summary: Get items from drives
+      description: All items contained in the list.
       operationId: drives.list_ListItems
       parameters:
         - name: drive-id
@@ -10331,6 +10394,7 @@ paths:
       tags:
         - drives.list
       summary: Get items from drives
+      description: All items contained in the list.
       operationId: drives.list_GetItems
       parameters:
         - name: drive-id
@@ -10523,6 +10587,7 @@ paths:
       tags:
         - drives.list
       summary: Get activities from drives
+      description: The list of recent activities that took place on this item.
       operationId: drives.list.items_ListActivities
       parameters:
         - name: drive-id
@@ -10645,6 +10710,7 @@ paths:
       tags:
         - drives.list
       summary: Get activities from drives
+      description: The list of recent activities that took place on this item.
       operationId: drives.list.items_GetActivities
       parameters:
         - name: drive-id
@@ -10991,6 +11057,7 @@ paths:
       tags:
         - drives.list
       summary: Get content for the navigation property driveItem from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.list.items.activities_GetDriveItemContent
       parameters:
         - name: drive-id
@@ -11029,6 +11096,7 @@ paths:
       tags:
         - drives.list
       summary: Update content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.list.items.activities_SetDriveItemContent
       parameters:
         - name: drive-id
@@ -11210,6 +11278,7 @@ paths:
       tags:
         - drives.list
       summary: Get analytics from drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drives.list.items_GetAnalytics
       parameters:
         - name: drive-id
@@ -11287,6 +11356,7 @@ paths:
       tags:
         - drives.list
       summary: Get documentSetVersions from drives
+      description: Version information for a document set version created by a user.
       operationId: drives.list.items_ListDocumentSetVersions
       parameters:
         - name: drive-id
@@ -11422,6 +11492,7 @@ paths:
       tags:
         - drives.list
       summary: Get documentSetVersions from drives
+      description: Version information for a document set version created by a user.
       operationId: drives.list.items_GetDocumentSetVersions
       parameters:
         - name: drive-id
@@ -11615,6 +11686,7 @@ paths:
       tags:
         - drives.list
       summary: Get driveItem from drives
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: drives.list.items_GetDriveItem
       parameters:
         - name: drive-id
@@ -11783,6 +11855,7 @@ paths:
       tags:
         - drives.list
       summary: Get content for the navigation property driveItem from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.list.items_GetDriveItemContent
       parameters:
         - name: drive-id
@@ -11814,6 +11887,7 @@ paths:
       tags:
         - drives.list
       summary: Update content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.list.items_SetDriveItemContent
       parameters:
         - name: drive-id
@@ -11849,6 +11923,7 @@ paths:
       tags:
         - drives.list
       summary: Get fields from drives
+      description: The values of the columns set on this list item.
       operationId: drives.list.items_GetFields
       parameters:
         - name: drive-id
@@ -12091,6 +12166,7 @@ paths:
       tags:
         - drives.list
       summary: Get versions from drives
+      description: The list of previous versions of the list item.
       operationId: drives.list.items_ListVersions
       parameters:
         - name: drive-id
@@ -12211,6 +12287,7 @@ paths:
       tags:
         - drives.list
       summary: Get versions from drives
+      description: The list of previous versions of the list item.
       operationId: drives.list.items_GetVersions
       parameters:
         - name: drive-id
@@ -12365,6 +12442,7 @@ paths:
       tags:
         - drives.list
       summary: Get fields from drives
+      description: A collection of the fields and values for this version of the list item.
       operationId: drives.list.items.versions_GetFields
       parameters:
         - name: drive-id
@@ -12610,6 +12688,7 @@ paths:
       tags:
         - drives.list
       summary: Get operations from drives
+      description: The collection of long running operations for the list.
       operationId: drives.list_ListOperations
       parameters:
         - name: drive-id
@@ -12732,6 +12811,7 @@ paths:
       tags:
         - drives.list
       summary: Get operations from drives
+      description: The collection of long running operations for the list.
       operationId: drives.list_GetOperations
       parameters:
         - name: drive-id
@@ -12860,6 +12940,7 @@ paths:
       tags:
         - drives.list
       summary: Get subscriptions from drives
+      description: The set of subscriptions on the list.
       operationId: drives.list_ListSubscriptions
       parameters:
         - name: drive-id
@@ -13000,6 +13081,7 @@ paths:
       tags:
         - drives.list
       summary: Get subscriptions from drives
+      description: The set of subscriptions on the list.
       operationId: drives.list_GetSubscriptions
       parameters:
         - name: drive-id
@@ -13267,6 +13349,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get root from drives
+      description: The root folder of the drive. Read-only.
       operationId: drives_GetRoot
       parameters:
         - name: drive-id
@@ -13497,6 +13580,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get activities from drives
+      description: The list of recent activities that took place on this item.
       operationId: drives.root_ListActivities
       parameters:
         - name: drive-id
@@ -13575,6 +13659,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get activities from drives
+      description: The list of recent activities that took place on this item.
       operationId: drives.root_GetActivities
       parameters:
         - name: drive-id
@@ -13648,6 +13733,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get analytics from drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drives.root_GetAnalytics
       parameters:
         - name: drive-id
@@ -13715,6 +13801,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get children from drives
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: drives.root_ListChildren
       parameters:
         - name: drive-id
@@ -13907,6 +13994,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get children from drives
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: drives.root_GetChildren
       parameters:
         - name: drive-id
@@ -14075,6 +14163,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property children from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.root_GetChildrenContent
       parameters:
         - name: drive-id
@@ -14106,6 +14195,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property children in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.root_SetChildrenContent
       parameters:
         - name: drive-id
@@ -14141,6 +14231,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property root from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives_GetRootContent
       parameters:
         - name: drive-id
@@ -14165,6 +14256,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property root in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives_SetRootContent
       parameters:
         - name: drive-id
@@ -14193,6 +14285,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get listItem from drives
+      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: drives.root_GetListItem
       parameters:
         - name: drive-id
@@ -14356,6 +14449,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get activities from drives
+      description: The list of recent activities that took place on this item.
       operationId: drives.root.listItem_ListActivities
       parameters:
         - name: drive-id
@@ -14464,6 +14558,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get activities from drives
+      description: The list of recent activities that took place on this item.
       operationId: drives.root.listItem_GetActivities
       parameters:
         - name: drive-id
@@ -14769,6 +14864,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property driveItem from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.root.listItem.activities_GetDriveItemContent
       parameters:
         - name: drive-id
@@ -14800,6 +14896,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.root.listItem.activities_SetDriveItemContent
       parameters:
         - name: drive-id
@@ -14959,6 +15056,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get analytics from drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drives.root.listItem_GetAnalytics
       parameters:
         - name: drive-id
@@ -15026,6 +15124,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get documentSetVersions from drives
+      description: Version information for a document set version created by a user.
       operationId: drives.root.listItem_ListDocumentSetVersions
       parameters:
         - name: drive-id
@@ -15147,6 +15246,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get documentSetVersions from drives
+      description: Version information for a document set version created by a user.
       operationId: drives.root.listItem_GetDocumentSetVersions
       parameters:
         - name: drive-id
@@ -15311,6 +15411,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get driveItem from drives
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: drives.root.listItem_GetDriveItem
       parameters:
         - name: drive-id
@@ -15461,6 +15562,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property driveItem from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.root.listItem_GetDriveItemContent
       parameters:
         - name: drive-id
@@ -15485,6 +15587,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives.root.listItem_SetDriveItemContent
       parameters:
         - name: drive-id
@@ -15513,6 +15616,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get fields from drives
+      description: The values of the columns set on this list item.
       operationId: drives.root.listItem_GetFields
       parameters:
         - name: drive-id
@@ -15720,6 +15824,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
+      description: The list of previous versions of the list item.
       operationId: drives.root.listItem_ListVersions
       parameters:
         - name: drive-id
@@ -15826,6 +15931,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
+      description: The list of previous versions of the list item.
       operationId: drives.root.listItem_GetVersions
       parameters:
         - name: drive-id
@@ -15958,6 +16064,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get fields from drives
+      description: A collection of the fields and values for this version of the list item.
       operationId: drives.root.listItem.versions_GetFields
       parameters:
         - name: drive-id
@@ -16723,6 +16830,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get permissions from drives
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: drives.root_ListPermissions
       parameters:
         - name: drive-id
@@ -16851,6 +16959,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get permissions from drives
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: drives.root_GetPermissions
       parameters:
         - name: drive-id
@@ -17089,6 +17198,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get subscriptions from drives
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: drives.root_ListSubscriptions
       parameters:
         - name: drive-id
@@ -17229,6 +17339,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get subscriptions from drives
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: drives.root_GetSubscriptions
       parameters:
         - name: drive-id
@@ -17393,6 +17504,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get thumbnails from drives
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: drives.root_ListThumbnails
       parameters:
         - name: drive-id
@@ -17500,6 +17612,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get thumbnails from drives
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: drives.root_GetThumbnails
       parameters:
         - name: drive-id
@@ -17623,6 +17736,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: drives.root_ListVersions
       parameters:
         - name: drive-id
@@ -17733,6 +17847,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: drives.root_GetVersions
       parameters:
         - name: drive-id
@@ -17953,6 +18068,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get special from drives
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: drives_ListSpecial
       parameters:
         - name: drive-id
@@ -18145,6 +18261,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get special from drives
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: drives_GetSpecial
       parameters:
         - name: drive-id
@@ -18313,6 +18430,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property special from drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives_GetSpecialContent
       parameters:
         - name: drive-id
@@ -18344,6 +18462,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property special in drives
+      description: 'The content stream, if the item represents a file.'
       operationId: drives_SetSpecialContent
       parameters:
         - name: drive-id
@@ -18379,6 +18498,7 @@ paths:
       tags:
         - groups.drive
       summary: Get drive from groups
+      description: The group's default drive. Read-only.
       operationId: groups_GetDrive
       parameters:
         - name: group-id
@@ -18496,6 +18616,7 @@ paths:
       tags:
         - groups.drive
       summary: Get drives from groups
+      description: The group's drives. Read-only.
       operationId: groups_ListDrives
       parameters:
         - name: group-id
@@ -18651,6 +18772,7 @@ paths:
       tags:
         - groups.drive
       summary: Get drives from groups
+      description: The group's drives. Read-only.
       operationId: groups_GetDrives
       parameters:
         - name: group-id
@@ -18854,6 +18976,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place under this drive.
       operationId: groups.drives_ListActivities
       parameters:
         - name: group-id
@@ -18976,6 +19099,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place under this drive.
       operationId: groups.drives_GetActivities
       parameters:
         - name: group-id
@@ -19322,6 +19446,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property driveItem from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.activities_GetDriveItemContent
       parameters:
         - name: group-id
@@ -19360,6 +19485,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.activities_SetDriveItemContent
       parameters:
         - name: group-id
@@ -19541,6 +19667,7 @@ paths:
       tags:
         - groups.drive
       summary: Get bundles from groups
+      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: groups.drives_ListBundles
       parameters:
         - name: group-id
@@ -19740,6 +19867,7 @@ paths:
       tags:
         - groups.drive
       summary: Get bundles from groups
+      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: groups.drives_GetBundles
       parameters:
         - name: group-id
@@ -19926,6 +20054,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property bundles from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_GetBundlesContent
       parameters:
         - name: group-id
@@ -19964,6 +20093,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property bundles in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_SetBundlesContent
       parameters:
         - name: group-id
@@ -20006,6 +20136,7 @@ paths:
       tags:
         - groups.drive
       summary: Get following from groups
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: groups.drives_ListFollowing
       parameters:
         - name: group-id
@@ -20205,6 +20336,7 @@ paths:
       tags:
         - groups.drive
       summary: Get following from groups
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: groups.drives_GetFollowing
       parameters:
         - name: group-id
@@ -20391,6 +20523,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property following from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_GetFollowingContent
       parameters:
         - name: group-id
@@ -20429,6 +20562,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property following in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_SetFollowingContent
       parameters:
         - name: group-id
@@ -20471,6 +20605,7 @@ paths:
       tags:
         - groups.drive
       summary: Get items from groups
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: groups.drives_ListItems
       parameters:
         - name: group-id
@@ -20707,6 +20842,7 @@ paths:
       tags:
         - groups.drive
       summary: Get items from groups
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: groups.drives_GetItems
       parameters:
         - name: group-id
@@ -21001,6 +21137,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place on this item.
       operationId: groups.drives.items_ListActivities
       parameters:
         - name: group-id
@@ -21093,6 +21230,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place on this item.
       operationId: groups.drives.items_GetActivities
       parameters:
         - name: group-id
@@ -21184,6 +21322,7 @@ paths:
       tags:
         - groups.drive
       summary: Get analytics from groups
+      description: Analytics about the view activities that took place on this item.
       operationId: groups.drives.items_GetAnalytics
       parameters:
         - name: group-id
@@ -21271,6 +21410,7 @@ paths:
       tags:
         - groups.drive
       summary: Get children from groups
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: groups.drives.items_ListChildren
       parameters:
         - name: group-id
@@ -21477,6 +21617,7 @@ paths:
       tags:
         - groups.drive
       summary: Get children from groups
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: groups.drives.items_GetChildren
       parameters:
         - name: group-id
@@ -21681,6 +21822,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property children from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.items_GetChildrenContent
       parameters:
         - name: group-id
@@ -21726,6 +21868,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property children in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.items_SetChildrenContent
       parameters:
         - name: group-id
@@ -21775,6 +21918,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property items from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_GetItemsContent
       parameters:
         - name: group-id
@@ -21813,6 +21957,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property items in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_SetItemsContent
       parameters:
         - name: group-id
@@ -21855,6 +22000,7 @@ paths:
       tags:
         - groups.drive
       summary: Get listItem from groups
+      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: groups.drives.items_GetListItem
       parameters:
         - name: group-id
@@ -22076,6 +22222,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place on this item.
       operationId: groups.drives.items.listItem_ListActivities
       parameters:
         - name: group-id
@@ -22212,6 +22359,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place on this item.
       operationId: groups.drives.items.listItem_GetActivities
       parameters:
         - name: group-id
@@ -22599,6 +22747,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property driveItem from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.items.listItem.activities_GetDriveItemContent
       parameters:
         - name: group-id
@@ -22644,6 +22793,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.items.listItem.activities_SetDriveItemContent
       parameters:
         - name: group-id
@@ -22847,6 +22997,7 @@ paths:
       tags:
         - groups.drive
       summary: Get analytics from groups
+      description: Analytics about the view activities that took place on this item.
       operationId: groups.drives.items.listItem_GetAnalytics
       parameters:
         - name: group-id
@@ -22934,6 +23085,7 @@ paths:
       tags:
         - groups.drive
       summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: groups.drives.items.listItem_ListDocumentSetVersions
       parameters:
         - name: group-id
@@ -23083,6 +23235,7 @@ paths:
       tags:
         - groups.drive
       summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: groups.drives.items.listItem_GetDocumentSetVersions
       parameters:
         - name: group-id
@@ -23264,6 +23417,7 @@ paths:
       tags:
         - groups.drive
       summary: Get driveItem from groups
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: groups.drives.items.listItem_GetDriveItem
       parameters:
         - name: group-id
@@ -23450,6 +23604,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property driveItem from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.items.listItem_GetDriveItemContent
       parameters:
         - name: group-id
@@ -23488,6 +23643,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.items.listItem_SetDriveItemContent
       parameters:
         - name: group-id
@@ -23530,6 +23686,7 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
+      description: The values of the columns set on this list item.
       operationId: groups.drives.items.listItem_GetFields
       parameters:
         - name: group-id
@@ -23670,6 +23827,7 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
+      description: The list of previous versions of the list item.
       operationId: groups.drives.items.listItem_ListVersions
       parameters:
         - name: group-id
@@ -23804,6 +23962,7 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
+      description: The list of previous versions of the list item.
       operationId: groups.drives.items.listItem_GetVersions
       parameters:
         - name: group-id
@@ -23980,6 +24139,7 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
+      description: A collection of the fields and values for this version of the list item.
       operationId: groups.drives.items.listItem.versions_GetFields
       parameters:
         - name: group-id
@@ -24141,6 +24301,7 @@ paths:
       tags:
         - groups.drive
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: groups.drives.items_ListPermissions
       parameters:
         - name: group-id
@@ -24297,6 +24458,7 @@ paths:
       tags:
         - groups.drive
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: groups.drives.items_GetPermissions
       parameters:
         - name: group-id
@@ -24474,6 +24636,7 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: groups.drives.items_ListSubscriptions
       parameters:
         - name: group-id
@@ -24642,6 +24805,7 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: groups.drives.items_GetSubscriptions
       parameters:
         - name: group-id
@@ -24821,6 +24985,7 @@ paths:
       tags:
         - groups.drive
       summary: Get thumbnails from groups
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: groups.drives.items_ListThumbnails
       parameters:
         - name: group-id
@@ -24956,6 +25121,7 @@ paths:
       tags:
         - groups.drive
       summary: Get thumbnails from groups
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: groups.drives.items_GetThumbnails
       parameters:
         - name: group-id
@@ -25121,6 +25287,7 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: groups.drives.items_ListVersions
       parameters:
         - name: group-id
@@ -25259,6 +25426,7 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: groups.drives.items_GetVersions
       parameters:
         - name: group-id
@@ -25522,6 +25690,7 @@ paths:
       tags:
         - groups.drive
       summary: Get list from groups
+      description: 'For drives in SharePoint, the underlying document library list. Read-only. Nullable.'
       operationId: groups.drives_GetList
       parameters:
         - name: group-id
@@ -25718,6 +25887,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The recent activities that took place within this list.
       operationId: groups.drives.list_ListActivities
       parameters:
         - name: group-id
@@ -26224,6 +26394,7 @@ paths:
       tags:
         - groups.drive
       summary: Get sourceColumn from groups
+      description: The source column for content type column.
       operationId: groups.drives.list.columns_GetSourceColumn
       parameters:
         - name: group-id
@@ -26692,6 +26863,7 @@ paths:
       tags:
         - groups.drive
       summary: Get base from groups
+      description: Parent contentType from which this content type is derived.
       operationId: groups.drives.list.contentTypes_GetBase
       parameters:
         - name: group-id
@@ -26809,6 +26981,7 @@ paths:
       tags:
         - groups.drive
       summary: Get baseTypes from groups
+      description: The collection of content types that are ancestors of this content type.
       operationId: groups.drives.list.contentTypes_ListBaseTypes
       parameters:
         - name: group-id
@@ -26940,6 +27113,7 @@ paths:
       tags:
         - groups.drive
       summary: Get baseTypes from groups
+      description: The collection of content types that are ancestors of this content type.
       operationId: groups.drives.list.contentTypes_GetBaseTypes
       parameters:
         - name: group-id
@@ -27069,6 +27243,7 @@ paths:
       tags:
         - groups.drive
       summary: Get columnLinks from groups
+      description: The collection of columns that are required by this content type
       operationId: groups.drives.list.contentTypes_ListColumnLinks
       parameters:
         - name: group-id
@@ -27195,6 +27370,7 @@ paths:
       tags:
         - groups.drive
       summary: Get columnLinks from groups
+      description: The collection of columns that are required by this content type
       operationId: groups.drives.list.contentTypes_GetColumnLinks
       parameters:
         - name: group-id
@@ -27357,6 +27533,7 @@ paths:
       tags:
         - groups.drive
       summary: Get columnPositions from groups
+      description: Column order information in a content type.
       operationId: groups.drives.list.contentTypes_ListColumnPositions
       parameters:
         - name: group-id
@@ -27531,6 +27708,7 @@ paths:
       tags:
         - groups.drive
       summary: Get columnPositions from groups
+      description: Column order information in a content type.
       operationId: groups.drives.list.contentTypes_GetColumnPositions
       parameters:
         - name: group-id
@@ -27641,6 +27819,7 @@ paths:
       tags:
         - groups.drive
       summary: Get columns from groups
+      description: The collection of column definitions for this contentType.
       operationId: groups.drives.list.contentTypes_ListColumns
       parameters:
         - name: group-id
@@ -27859,6 +28038,7 @@ paths:
       tags:
         - groups.drive
       summary: Get columns from groups
+      description: The collection of column definitions for this contentType.
       operationId: groups.drives.list.contentTypes_GetColumns
       parameters:
         - name: group-id
@@ -28061,6 +28241,7 @@ paths:
       tags:
         - groups.drive
       summary: Get sourceColumn from groups
+      description: The source column for content type column.
       operationId: groups.drives.list.contentTypes.columns_GetSourceColumn
       parameters:
         - name: group-id
@@ -28171,6 +28352,7 @@ paths:
       tags:
         - groups.drive
       summary: Get drive from groups
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: groups.drives.list_GetDrive
       parameters:
         - name: group-id
@@ -28304,6 +28486,7 @@ paths:
       tags:
         - groups.drive
       summary: Get items from groups
+      description: All items contained in the list.
       operationId: groups.drives.list_ListItems
       parameters:
         - name: group-id
@@ -28465,6 +28648,7 @@ paths:
       tags:
         - groups.drive
       summary: Get items from groups
+      description: All items contained in the list.
       operationId: groups.drives.list_GetItems
       parameters:
         - name: group-id
@@ -28686,6 +28870,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place on this item.
       operationId: groups.drives.list.items_ListActivities
       parameters:
         - name: group-id
@@ -28822,6 +29007,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place on this item.
       operationId: groups.drives.list.items_GetActivities
       parameters:
         - name: group-id
@@ -29209,6 +29395,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property driveItem from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.list.items.activities_GetDriveItemContent
       parameters:
         - name: group-id
@@ -29254,6 +29441,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.list.items.activities_SetDriveItemContent
       parameters:
         - name: group-id
@@ -29457,6 +29645,7 @@ paths:
       tags:
         - groups.drive
       summary: Get analytics from groups
+      description: Analytics about the view activities that took place on this item.
       operationId: groups.drives.list.items_GetAnalytics
       parameters:
         - name: group-id
@@ -29544,6 +29733,7 @@ paths:
       tags:
         - groups.drive
       summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: groups.drives.list.items_ListDocumentSetVersions
       parameters:
         - name: group-id
@@ -29693,6 +29883,7 @@ paths:
       tags:
         - groups.drive
       summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: groups.drives.list.items_GetDocumentSetVersions
       parameters:
         - name: group-id
@@ -29874,6 +30065,7 @@ paths:
       tags:
         - groups.drive
       summary: Get driveItem from groups
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: groups.drives.list.items_GetDriveItem
       parameters:
         - name: group-id
@@ -30060,6 +30252,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property driveItem from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.list.items_GetDriveItemContent
       parameters:
         - name: group-id
@@ -30098,6 +30291,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.list.items_SetDriveItemContent
       parameters:
         - name: group-id
@@ -30140,6 +30334,7 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
+      description: The values of the columns set on this list item.
       operationId: groups.drives.list.items_GetFields
       parameters:
         - name: group-id
@@ -30280,6 +30475,7 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
+      description: The list of previous versions of the list item.
       operationId: groups.drives.list.items_ListVersions
       parameters:
         - name: group-id
@@ -30414,6 +30610,7 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
+      description: The list of previous versions of the list item.
       operationId: groups.drives.list.items_GetVersions
       parameters:
         - name: group-id
@@ -30590,6 +30787,7 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
+      description: A collection of the fields and values for this version of the list item.
       operationId: groups.drives.list.items.versions_GetFields
       parameters:
         - name: group-id
@@ -30751,6 +30949,7 @@ paths:
       tags:
         - groups.drive
       summary: Get operations from groups
+      description: The collection of long running operations for the list.
       operationId: groups.drives.list_ListOperations
       parameters:
         - name: group-id
@@ -30887,6 +31086,7 @@ paths:
       tags:
         - groups.drive
       summary: Get operations from groups
+      description: The collection of long running operations for the list.
       operationId: groups.drives.list_GetOperations
       parameters:
         - name: group-id
@@ -31036,6 +31236,7 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
+      description: The set of subscriptions on the list.
       operationId: groups.drives.list_ListSubscriptions
       parameters:
         - name: group-id
@@ -31190,6 +31391,7 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
+      description: The set of subscriptions on the list.
       operationId: groups.drives.list_GetSubscriptions
       parameters:
         - name: group-id
@@ -31348,6 +31550,7 @@ paths:
       tags:
         - groups.drive
       summary: Get root from groups
+      description: The root folder of the drive. Read-only.
       operationId: groups.drives_GetRoot
       parameters:
         - name: group-id
@@ -31610,6 +31813,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place on this item.
       operationId: groups.drives.root_ListActivities
       parameters:
         - name: group-id
@@ -31695,6 +31899,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place on this item.
       operationId: groups.drives.root_GetActivities
       parameters:
         - name: group-id
@@ -31777,6 +31982,7 @@ paths:
       tags:
         - groups.drive
       summary: Get analytics from groups
+      description: Analytics about the view activities that took place on this item.
       operationId: groups.drives.root_GetAnalytics
       parameters:
         - name: group-id
@@ -31854,6 +32060,7 @@ paths:
       tags:
         - groups.drive
       summary: Get children from groups
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: groups.drives.root_ListChildren
       parameters:
         - name: group-id
@@ -32053,6 +32260,7 @@ paths:
       tags:
         - groups.drive
       summary: Get children from groups
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: groups.drives.root_GetChildren
       parameters:
         - name: group-id
@@ -32239,6 +32447,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property children from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.root_GetChildrenContent
       parameters:
         - name: group-id
@@ -32277,6 +32486,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property children in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.root_SetChildrenContent
       parameters:
         - name: group-id
@@ -32319,6 +32529,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property root from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_GetRootContent
       parameters:
         - name: group-id
@@ -32350,6 +32561,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property root in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_SetRootContent
       parameters:
         - name: group-id
@@ -32385,6 +32597,7 @@ paths:
       tags:
         - groups.drive
       summary: Get listItem from groups
+      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: groups.drives.root_GetListItem
       parameters:
         - name: group-id
@@ -32577,6 +32790,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place on this item.
       operationId: groups.drives.root.listItem_ListActivities
       parameters:
         - name: group-id
@@ -32699,6 +32913,7 @@ paths:
       tags:
         - groups.drive
       summary: Get activities from groups
+      description: The list of recent activities that took place on this item.
       operationId: groups.drives.root.listItem_GetActivities
       parameters:
         - name: group-id
@@ -33045,6 +33260,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property driveItem from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.root.listItem.activities_GetDriveItemContent
       parameters:
         - name: group-id
@@ -33083,6 +33299,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.root.listItem.activities_SetDriveItemContent
       parameters:
         - name: group-id
@@ -33264,6 +33481,7 @@ paths:
       tags:
         - groups.drive
       summary: Get analytics from groups
+      description: Analytics about the view activities that took place on this item.
       operationId: groups.drives.root.listItem_GetAnalytics
       parameters:
         - name: group-id
@@ -33341,6 +33559,7 @@ paths:
       tags:
         - groups.drive
       summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: groups.drives.root.listItem_ListDocumentSetVersions
       parameters:
         - name: group-id
@@ -33476,6 +33695,7 @@ paths:
       tags:
         - groups.drive
       summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: groups.drives.root.listItem_GetDocumentSetVersions
       parameters:
         - name: group-id
@@ -33635,6 +33855,7 @@ paths:
       tags:
         - groups.drive
       summary: Get driveItem from groups
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: groups.drives.root.listItem_GetDriveItem
       parameters:
         - name: group-id
@@ -33803,6 +34024,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property driveItem from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.root.listItem_GetDriveItemContent
       parameters:
         - name: group-id
@@ -33834,6 +34056,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.root.listItem_SetDriveItemContent
       parameters:
         - name: group-id
@@ -33869,6 +34092,7 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
+      description: The values of the columns set on this list item.
       operationId: groups.drives.root.listItem_GetFields
       parameters:
         - name: group-id
@@ -33988,6 +34212,7 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
+      description: The list of previous versions of the list item.
       operationId: groups.drives.root.listItem_ListVersions
       parameters:
         - name: group-id
@@ -34108,6 +34333,7 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
+      description: The list of previous versions of the list item.
       operationId: groups.drives.root.listItem_GetVersions
       parameters:
         - name: group-id
@@ -34262,6 +34488,7 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
+      description: A collection of the fields and values for this version of the list item.
       operationId: groups.drives.root.listItem.versions_GetFields
       parameters:
         - name: group-id
@@ -34402,6 +34629,7 @@ paths:
       tags:
         - groups.drive
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: groups.drives.root_ListPermissions
       parameters:
         - name: group-id
@@ -34544,6 +34772,7 @@ paths:
       tags:
         - groups.drive
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: groups.drives.root_GetPermissions
       parameters:
         - name: group-id
@@ -34700,6 +34929,7 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: groups.drives.root_ListSubscriptions
       parameters:
         - name: group-id
@@ -34854,6 +35084,7 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: groups.drives.root_GetSubscriptions
       parameters:
         - name: group-id
@@ -35012,6 +35243,7 @@ paths:
       tags:
         - groups.drive
       summary: Get thumbnails from groups
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: groups.drives.root_ListThumbnails
       parameters:
         - name: group-id
@@ -35133,6 +35365,7 @@ paths:
       tags:
         - groups.drive
       summary: Get thumbnails from groups
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: groups.drives.root_GetThumbnails
       parameters:
         - name: group-id
@@ -35277,6 +35510,7 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: groups.drives.root_ListVersions
       parameters:
         - name: group-id
@@ -35401,6 +35635,7 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: groups.drives.root_GetVersions
       parameters:
         - name: group-id
@@ -35629,6 +35864,7 @@ paths:
       tags:
         - groups.drive
       summary: Get special from groups
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: groups.drives_ListSpecial
       parameters:
         - name: group-id
@@ -35828,6 +36064,7 @@ paths:
       tags:
         - groups.drive
       summary: Get special from groups
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: groups.drives_GetSpecial
       parameters:
         - name: group-id
@@ -36014,6 +36251,7 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property special from groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_GetSpecialContent
       parameters:
         - name: group-id
@@ -36052,6 +36290,7 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property special in groups
+      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_SetSpecialContent
       parameters:
         - name: group-id
@@ -36094,6 +36333,7 @@ paths:
       tags:
         - shares.sharedDriveItem
       summary: Accessing shared DriveItems
+      description: 'Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.'
       operationId: shares.sharedDriveItem_ListSharedDriveItem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -36222,6 +36462,7 @@ paths:
       tags:
         - shares.sharedDriveItem
       summary: Accessing shared DriveItems
+      description: 'Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.'
       operationId: shares.sharedDriveItem_GetSharedDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -36385,6 +36626,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Get driveItem from shares
+      description: Used to access the underlying driveItem
       operationId: shares_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -36535,6 +36777,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Get content for the navigation property driveItem from shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares_GetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -36559,6 +36802,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Update content for the navigation property driveItem in shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares_SetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -36587,6 +36831,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Get items from shares
+      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
       operationId: shares_ListItems
       parameters:
         - name: sharedDriveItem-id
@@ -36779,6 +37024,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Get items from shares
+      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
       operationId: shares_GetItems
       parameters:
         - name: sharedDriveItem-id
@@ -36947,6 +37193,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Get content for the navigation property items from shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares_GetItemsContent
       parameters:
         - name: sharedDriveItem-id
@@ -36978,6 +37225,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Update content for the navigation property items in shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares_SetItemsContent
       parameters:
         - name: sharedDriveItem-id
@@ -37013,6 +37261,7 @@ paths:
       tags:
         - shares.list
       summary: Get list from shares
+      description: Used to access the underlying list
       operationId: shares_GetList
       parameters:
         - name: sharedDriveItem-id
@@ -37179,6 +37428,7 @@ paths:
       tags:
         - shares.list
       summary: Get activities from shares
+      description: The recent activities that took place within this list.
       operationId: shares.list_ListActivities
       parameters:
         - name: sharedDriveItem-id
@@ -37635,6 +37885,7 @@ paths:
       tags:
         - shares.list
       summary: Get sourceColumn from shares
+      description: The source column for content type column.
       operationId: shares.list.columns_GetSourceColumn
       parameters:
         - name: sharedDriveItem-id
@@ -38055,6 +38306,7 @@ paths:
       tags:
         - shares.list
       summary: Get base from shares
+      description: Parent contentType from which this content type is derived.
       operationId: shares.list.contentTypes_GetBase
       parameters:
         - name: sharedDriveItem-id
@@ -38160,6 +38412,7 @@ paths:
       tags:
         - shares.list
       summary: Get baseTypes from shares
+      description: The collection of content types that are ancestors of this content type.
       operationId: shares.list.contentTypes_ListBaseTypes
       parameters:
         - name: sharedDriveItem-id
@@ -38284,6 +38537,7 @@ paths:
       tags:
         - shares.list
       summary: Get baseTypes from shares
+      description: The collection of content types that are ancestors of this content type.
       operationId: shares.list.contentTypes_GetBaseTypes
       parameters:
         - name: sharedDriveItem-id
@@ -38401,6 +38655,7 @@ paths:
       tags:
         - shares.list
       summary: Get columnLinks from shares
+      description: The collection of columns that are required by this content type
       operationId: shares.list.contentTypes_ListColumnLinks
       parameters:
         - name: sharedDriveItem-id
@@ -38513,6 +38768,7 @@ paths:
       tags:
         - shares.list
       summary: Get columnLinks from shares
+      description: The collection of columns that are required by this content type
       operationId: shares.list.contentTypes_GetColumnLinks
       parameters:
         - name: sharedDriveItem-id
@@ -38654,6 +38910,7 @@ paths:
       tags:
         - shares.list
       summary: Get columnPositions from shares
+      description: Column order information in a content type.
       operationId: shares.list.contentTypes_ListColumnPositions
       parameters:
         - name: sharedDriveItem-id
@@ -38821,6 +39078,7 @@ paths:
       tags:
         - shares.list
       summary: Get columnPositions from shares
+      description: Column order information in a content type.
       operationId: shares.list.contentTypes_GetColumnPositions
       parameters:
         - name: sharedDriveItem-id
@@ -38923,6 +39181,7 @@ paths:
       tags:
         - shares.list
       summary: Get columns from shares
+      description: The collection of column definitions for this contentType.
       operationId: shares.list.contentTypes_ListColumns
       parameters:
         - name: sharedDriveItem-id
@@ -39127,6 +39386,7 @@ paths:
       tags:
         - shares.list
       summary: Get columns from shares
+      description: The collection of column definitions for this contentType.
       operationId: shares.list.contentTypes_GetColumns
       parameters:
         - name: sharedDriveItem-id
@@ -39307,6 +39567,7 @@ paths:
       tags:
         - shares.list
       summary: Get sourceColumn from shares
+      description: The source column for content type column.
       operationId: shares.list.contentTypes.columns_GetSourceColumn
       parameters:
         - name: sharedDriveItem-id
@@ -39691,6 +39952,7 @@ paths:
       tags:
         - shares.list
       summary: Get drive from shares
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: shares.list_GetDrive
       parameters:
         - name: sharedDriveItem-id
@@ -39808,6 +40070,7 @@ paths:
       tags:
         - shares.list
       summary: Get items from shares
+      description: All items contained in the list.
       operationId: shares.list_ListItems
       parameters:
         - name: sharedDriveItem-id
@@ -39955,6 +40218,7 @@ paths:
       tags:
         - shares.list
       summary: Get items from shares
+      description: All items contained in the list.
       operationId: shares.list_GetItems
       parameters:
         - name: sharedDriveItem-id
@@ -40147,6 +40411,7 @@ paths:
       tags:
         - shares.list
       summary: Get activities from shares
+      description: The list of recent activities that took place on this item.
       operationId: shares.list.items_ListActivities
       parameters:
         - name: sharedDriveItem-id
@@ -40269,6 +40534,7 @@ paths:
       tags:
         - shares.list
       summary: Get activities from shares
+      description: The list of recent activities that took place on this item.
       operationId: shares.list.items_GetActivities
       parameters:
         - name: sharedDriveItem-id
@@ -40615,6 +40881,7 @@ paths:
       tags:
         - shares.list
       summary: Get content for the navigation property driveItem from shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares.list.items.activities_GetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -40653,6 +40920,7 @@ paths:
       tags:
         - shares.list
       summary: Update content for the navigation property driveItem in shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares.list.items.activities_SetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -40834,6 +41102,7 @@ paths:
       tags:
         - shares.list
       summary: Get analytics from shares
+      description: Analytics about the view activities that took place on this item.
       operationId: shares.list.items_GetAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -40911,6 +41180,7 @@ paths:
       tags:
         - shares.list
       summary: Get documentSetVersions from shares
+      description: Version information for a document set version created by a user.
       operationId: shares.list.items_ListDocumentSetVersions
       parameters:
         - name: sharedDriveItem-id
@@ -41046,6 +41316,7 @@ paths:
       tags:
         - shares.list
       summary: Get documentSetVersions from shares
+      description: Version information for a document set version created by a user.
       operationId: shares.list.items_GetDocumentSetVersions
       parameters:
         - name: sharedDriveItem-id
@@ -41239,6 +41510,7 @@ paths:
       tags:
         - shares.list
       summary: Get driveItem from shares
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: shares.list.items_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -41407,6 +41679,7 @@ paths:
       tags:
         - shares.list
       summary: Get content for the navigation property driveItem from shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares.list.items_GetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -41438,6 +41711,7 @@ paths:
       tags:
         - shares.list
       summary: Update content for the navigation property driveItem in shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares.list.items_SetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -41473,6 +41747,7 @@ paths:
       tags:
         - shares.list
       summary: Get fields from shares
+      description: The values of the columns set on this list item.
       operationId: shares.list.items_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -41715,6 +41990,7 @@ paths:
       tags:
         - shares.list
       summary: Get versions from shares
+      description: The list of previous versions of the list item.
       operationId: shares.list.items_ListVersions
       parameters:
         - name: sharedDriveItem-id
@@ -41835,6 +42111,7 @@ paths:
       tags:
         - shares.list
       summary: Get versions from shares
+      description: The list of previous versions of the list item.
       operationId: shares.list.items_GetVersions
       parameters:
         - name: sharedDriveItem-id
@@ -41989,6 +42266,7 @@ paths:
       tags:
         - shares.list
       summary: Get fields from shares
+      description: A collection of the fields and values for this version of the list item.
       operationId: shares.list.items.versions_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -42234,6 +42512,7 @@ paths:
       tags:
         - shares.list
       summary: Get operations from shares
+      description: The collection of long running operations for the list.
       operationId: shares.list_ListOperations
       parameters:
         - name: sharedDriveItem-id
@@ -42356,6 +42635,7 @@ paths:
       tags:
         - shares.list
       summary: Get operations from shares
+      description: The collection of long running operations for the list.
       operationId: shares.list_GetOperations
       parameters:
         - name: sharedDriveItem-id
@@ -42484,6 +42764,7 @@ paths:
       tags:
         - shares.list
       summary: Get subscriptions from shares
+      description: The set of subscriptions on the list.
       operationId: shares.list_ListSubscriptions
       parameters:
         - name: sharedDriveItem-id
@@ -42624,6 +42905,7 @@ paths:
       tags:
         - shares.list
       summary: Get subscriptions from shares
+      description: The set of subscriptions on the list.
       operationId: shares.list_GetSubscriptions
       parameters:
         - name: sharedDriveItem-id
@@ -42788,6 +43070,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get listItem from shares
+      description: Used to access the underlying listItem
       operationId: shares_GetListItem
       parameters:
         - name: sharedDriveItem-id
@@ -42951,6 +43234,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get activities from shares
+      description: The list of recent activities that took place on this item.
       operationId: shares.listItem_ListActivities
       parameters:
         - name: sharedDriveItem-id
@@ -43059,6 +43343,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get activities from shares
+      description: The list of recent activities that took place on this item.
       operationId: shares.listItem_GetActivities
       parameters:
         - name: sharedDriveItem-id
@@ -43364,6 +43649,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get content for the navigation property driveItem from shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares.listItem.activities_GetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -43395,6 +43681,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update content for the navigation property driveItem in shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares.listItem.activities_SetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -43554,6 +43841,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get analytics from shares
+      description: Analytics about the view activities that took place on this item.
       operationId: shares.listItem_GetAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -43621,6 +43909,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get documentSetVersions from shares
+      description: Version information for a document set version created by a user.
       operationId: shares.listItem_ListDocumentSetVersions
       parameters:
         - name: sharedDriveItem-id
@@ -43742,6 +44031,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get documentSetVersions from shares
+      description: Version information for a document set version created by a user.
       operationId: shares.listItem_GetDocumentSetVersions
       parameters:
         - name: sharedDriveItem-id
@@ -43906,6 +44196,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get driveItem from shares
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: shares.listItem_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -44056,6 +44347,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get content for the navigation property driveItem from shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares.listItem_GetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -44080,6 +44372,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update content for the navigation property driveItem in shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares.listItem_SetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -44108,6 +44401,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get fields from shares
+      description: The values of the columns set on this list item.
       operationId: shares.listItem_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -44315,6 +44609,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get versions from shares
+      description: The list of previous versions of the list item.
       operationId: shares.listItem_ListVersions
       parameters:
         - name: sharedDriveItem-id
@@ -44421,6 +44716,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get versions from shares
+      description: The list of previous versions of the list item.
       operationId: shares.listItem_GetVersions
       parameters:
         - name: sharedDriveItem-id
@@ -44553,6 +44849,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get fields from shares
+      description: A collection of the fields and values for this version of the list item.
       operationId: shares.listItem.versions_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -44699,6 +44996,7 @@ paths:
       tags:
         - shares.permission
       summary: Get permission from shares
+      description: Used to access the permission representing the underlying sharing link
       operationId: shares_GetPermission
       parameters:
         - name: sharedDriveItem-id
@@ -45052,6 +45350,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Get content for the navigation property root from shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares_GetRootContent
       parameters:
         - name: sharedDriveItem-id
@@ -45076,6 +45375,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Update content for the navigation property root in shares
+      description: 'The content stream, if the item represents a file.'
       operationId: shares_SetRootContent
       parameters:
         - name: sharedDriveItem-id
@@ -45104,6 +45404,7 @@ paths:
       tags:
         - shares.site
       summary: Get site from shares
+      description: Used to access the underlying site
       operationId: shares_GetSite
       parameters:
         - name: sharedDriveItem-id
@@ -45264,6 +45565,7 @@ paths:
       tags:
         - users.drive
       summary: Get drive from users
+      description: The user's OneDrive. Read-only.
       operationId: users_GetDrive
       parameters:
         - name: user-id
@@ -45381,6 +45683,7 @@ paths:
       tags:
         - users.drive
       summary: Get drives from users
+      description: A collection of drives available for this user. Read-only.
       operationId: users_ListDrives
       parameters:
         - name: user-id
@@ -45536,6 +45839,7 @@ paths:
       tags:
         - users.drive
       summary: Get drives from users
+      description: A collection of drives available for this user. Read-only.
       operationId: users_GetDrives
       parameters:
         - name: user-id
@@ -45739,6 +46043,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place under this drive.
       operationId: users.drives_ListActivities
       parameters:
         - name: user-id
@@ -45861,6 +46166,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place under this drive.
       operationId: users.drives_GetActivities
       parameters:
         - name: user-id
@@ -46207,6 +46513,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property driveItem from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.activities_GetDriveItemContent
       parameters:
         - name: user-id
@@ -46245,6 +46552,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.activities_SetDriveItemContent
       parameters:
         - name: user-id
@@ -46426,6 +46734,7 @@ paths:
       tags:
         - users.drive
       summary: Get bundles from users
+      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: users.drives_ListBundles
       parameters:
         - name: user-id
@@ -46625,6 +46934,7 @@ paths:
       tags:
         - users.drive
       summary: Get bundles from users
+      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: users.drives_GetBundles
       parameters:
         - name: user-id
@@ -46811,6 +47121,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property bundles from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_GetBundlesContent
       parameters:
         - name: user-id
@@ -46849,6 +47160,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property bundles in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_SetBundlesContent
       parameters:
         - name: user-id
@@ -46891,6 +47203,7 @@ paths:
       tags:
         - users.drive
       summary: Get following from users
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: users.drives_ListFollowing
       parameters:
         - name: user-id
@@ -47090,6 +47403,7 @@ paths:
       tags:
         - users.drive
       summary: Get following from users
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: users.drives_GetFollowing
       parameters:
         - name: user-id
@@ -47276,6 +47590,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property following from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_GetFollowingContent
       parameters:
         - name: user-id
@@ -47314,6 +47629,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property following in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_SetFollowingContent
       parameters:
         - name: user-id
@@ -47356,6 +47672,7 @@ paths:
       tags:
         - users.drive
       summary: Get items from users
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: users.drives_ListItems
       parameters:
         - name: user-id
@@ -47592,6 +47909,7 @@ paths:
       tags:
         - users.drive
       summary: Get items from users
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: users.drives_GetItems
       parameters:
         - name: user-id
@@ -47886,6 +48204,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place on this item.
       operationId: users.drives.items_ListActivities
       parameters:
         - name: user-id
@@ -47978,6 +48297,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place on this item.
       operationId: users.drives.items_GetActivities
       parameters:
         - name: user-id
@@ -48069,6 +48389,7 @@ paths:
       tags:
         - users.drive
       summary: Get analytics from users
+      description: Analytics about the view activities that took place on this item.
       operationId: users.drives.items_GetAnalytics
       parameters:
         - name: user-id
@@ -48156,6 +48477,7 @@ paths:
       tags:
         - users.drive
       summary: Get children from users
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: users.drives.items_ListChildren
       parameters:
         - name: user-id
@@ -48362,6 +48684,7 @@ paths:
       tags:
         - users.drive
       summary: Get children from users
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: users.drives.items_GetChildren
       parameters:
         - name: user-id
@@ -48566,6 +48889,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property children from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.items_GetChildrenContent
       parameters:
         - name: user-id
@@ -48611,6 +48935,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property children in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.items_SetChildrenContent
       parameters:
         - name: user-id
@@ -48660,6 +48985,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property items from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_GetItemsContent
       parameters:
         - name: user-id
@@ -48698,6 +49024,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property items in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_SetItemsContent
       parameters:
         - name: user-id
@@ -48740,6 +49067,7 @@ paths:
       tags:
         - users.drive
       summary: Get listItem from users
+      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: users.drives.items_GetListItem
       parameters:
         - name: user-id
@@ -48961,6 +49289,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place on this item.
       operationId: users.drives.items.listItem_ListActivities
       parameters:
         - name: user-id
@@ -49097,6 +49426,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place on this item.
       operationId: users.drives.items.listItem_GetActivities
       parameters:
         - name: user-id
@@ -49484,6 +49814,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property driveItem from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.items.listItem.activities_GetDriveItemContent
       parameters:
         - name: user-id
@@ -49529,6 +49860,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.items.listItem.activities_SetDriveItemContent
       parameters:
         - name: user-id
@@ -49732,6 +50064,7 @@ paths:
       tags:
         - users.drive
       summary: Get analytics from users
+      description: Analytics about the view activities that took place on this item.
       operationId: users.drives.items.listItem_GetAnalytics
       parameters:
         - name: user-id
@@ -49819,6 +50152,7 @@ paths:
       tags:
         - users.drive
       summary: Get documentSetVersions from users
+      description: Version information for a document set version created by a user.
       operationId: users.drives.items.listItem_ListDocumentSetVersions
       parameters:
         - name: user-id
@@ -49968,6 +50302,7 @@ paths:
       tags:
         - users.drive
       summary: Get documentSetVersions from users
+      description: Version information for a document set version created by a user.
       operationId: users.drives.items.listItem_GetDocumentSetVersions
       parameters:
         - name: user-id
@@ -50149,6 +50484,7 @@ paths:
       tags:
         - users.drive
       summary: Get driveItem from users
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: users.drives.items.listItem_GetDriveItem
       parameters:
         - name: user-id
@@ -50335,6 +50671,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property driveItem from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.items.listItem_GetDriveItemContent
       parameters:
         - name: user-id
@@ -50373,6 +50710,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.items.listItem_SetDriveItemContent
       parameters:
         - name: user-id
@@ -50415,6 +50753,7 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
+      description: The values of the columns set on this list item.
       operationId: users.drives.items.listItem_GetFields
       parameters:
         - name: user-id
@@ -50555,6 +50894,7 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
+      description: The list of previous versions of the list item.
       operationId: users.drives.items.listItem_ListVersions
       parameters:
         - name: user-id
@@ -50689,6 +51029,7 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
+      description: The list of previous versions of the list item.
       operationId: users.drives.items.listItem_GetVersions
       parameters:
         - name: user-id
@@ -50865,6 +51206,7 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
+      description: A collection of the fields and values for this version of the list item.
       operationId: users.drives.items.listItem.versions_GetFields
       parameters:
         - name: user-id
@@ -51026,6 +51368,7 @@ paths:
       tags:
         - users.drive
       summary: Get permissions from users
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: users.drives.items_ListPermissions
       parameters:
         - name: user-id
@@ -51182,6 +51525,7 @@ paths:
       tags:
         - users.drive
       summary: Get permissions from users
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: users.drives.items_GetPermissions
       parameters:
         - name: user-id
@@ -51359,6 +51703,7 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: users.drives.items_ListSubscriptions
       parameters:
         - name: user-id
@@ -51527,6 +51872,7 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: users.drives.items_GetSubscriptions
       parameters:
         - name: user-id
@@ -51706,6 +52052,7 @@ paths:
       tags:
         - users.drive
       summary: Get thumbnails from users
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: users.drives.items_ListThumbnails
       parameters:
         - name: user-id
@@ -51841,6 +52188,7 @@ paths:
       tags:
         - users.drive
       summary: Get thumbnails from users
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: users.drives.items_GetThumbnails
       parameters:
         - name: user-id
@@ -52006,6 +52354,7 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: users.drives.items_ListVersions
       parameters:
         - name: user-id
@@ -52144,6 +52493,7 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: users.drives.items_GetVersions
       parameters:
         - name: user-id
@@ -52407,6 +52757,7 @@ paths:
       tags:
         - users.drive
       summary: Get list from users
+      description: 'For drives in SharePoint, the underlying document library list. Read-only. Nullable.'
       operationId: users.drives_GetList
       parameters:
         - name: user-id
@@ -52603,6 +52954,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The recent activities that took place within this list.
       operationId: users.drives.list_ListActivities
       parameters:
         - name: user-id
@@ -53109,6 +53461,7 @@ paths:
       tags:
         - users.drive
       summary: Get sourceColumn from users
+      description: The source column for content type column.
       operationId: users.drives.list.columns_GetSourceColumn
       parameters:
         - name: user-id
@@ -53577,6 +53930,7 @@ paths:
       tags:
         - users.drive
       summary: Get base from users
+      description: Parent contentType from which this content type is derived.
       operationId: users.drives.list.contentTypes_GetBase
       parameters:
         - name: user-id
@@ -53694,6 +54048,7 @@ paths:
       tags:
         - users.drive
       summary: Get baseTypes from users
+      description: The collection of content types that are ancestors of this content type.
       operationId: users.drives.list.contentTypes_ListBaseTypes
       parameters:
         - name: user-id
@@ -53825,6 +54180,7 @@ paths:
       tags:
         - users.drive
       summary: Get baseTypes from users
+      description: The collection of content types that are ancestors of this content type.
       operationId: users.drives.list.contentTypes_GetBaseTypes
       parameters:
         - name: user-id
@@ -53954,6 +54310,7 @@ paths:
       tags:
         - users.drive
       summary: Get columnLinks from users
+      description: The collection of columns that are required by this content type
       operationId: users.drives.list.contentTypes_ListColumnLinks
       parameters:
         - name: user-id
@@ -54080,6 +54437,7 @@ paths:
       tags:
         - users.drive
       summary: Get columnLinks from users
+      description: The collection of columns that are required by this content type
       operationId: users.drives.list.contentTypes_GetColumnLinks
       parameters:
         - name: user-id
@@ -54242,6 +54600,7 @@ paths:
       tags:
         - users.drive
       summary: Get columnPositions from users
+      description: Column order information in a content type.
       operationId: users.drives.list.contentTypes_ListColumnPositions
       parameters:
         - name: user-id
@@ -54416,6 +54775,7 @@ paths:
       tags:
         - users.drive
       summary: Get columnPositions from users
+      description: Column order information in a content type.
       operationId: users.drives.list.contentTypes_GetColumnPositions
       parameters:
         - name: user-id
@@ -54526,6 +54886,7 @@ paths:
       tags:
         - users.drive
       summary: Get columns from users
+      description: The collection of column definitions for this contentType.
       operationId: users.drives.list.contentTypes_ListColumns
       parameters:
         - name: user-id
@@ -54744,6 +55105,7 @@ paths:
       tags:
         - users.drive
       summary: Get columns from users
+      description: The collection of column definitions for this contentType.
       operationId: users.drives.list.contentTypes_GetColumns
       parameters:
         - name: user-id
@@ -54946,6 +55308,7 @@ paths:
       tags:
         - users.drive
       summary: Get sourceColumn from users
+      description: The source column for content type column.
       operationId: users.drives.list.contentTypes.columns_GetSourceColumn
       parameters:
         - name: user-id
@@ -55056,6 +55419,7 @@ paths:
       tags:
         - users.drive
       summary: Get drive from users
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: users.drives.list_GetDrive
       parameters:
         - name: user-id
@@ -55189,6 +55553,7 @@ paths:
       tags:
         - users.drive
       summary: Get items from users
+      description: All items contained in the list.
       operationId: users.drives.list_ListItems
       parameters:
         - name: user-id
@@ -55350,6 +55715,7 @@ paths:
       tags:
         - users.drive
       summary: Get items from users
+      description: All items contained in the list.
       operationId: users.drives.list_GetItems
       parameters:
         - name: user-id
@@ -55571,6 +55937,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place on this item.
       operationId: users.drives.list.items_ListActivities
       parameters:
         - name: user-id
@@ -55707,6 +56074,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place on this item.
       operationId: users.drives.list.items_GetActivities
       parameters:
         - name: user-id
@@ -56094,6 +56462,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property driveItem from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.list.items.activities_GetDriveItemContent
       parameters:
         - name: user-id
@@ -56139,6 +56508,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.list.items.activities_SetDriveItemContent
       parameters:
         - name: user-id
@@ -56342,6 +56712,7 @@ paths:
       tags:
         - users.drive
       summary: Get analytics from users
+      description: Analytics about the view activities that took place on this item.
       operationId: users.drives.list.items_GetAnalytics
       parameters:
         - name: user-id
@@ -56429,6 +56800,7 @@ paths:
       tags:
         - users.drive
       summary: Get documentSetVersions from users
+      description: Version information for a document set version created by a user.
       operationId: users.drives.list.items_ListDocumentSetVersions
       parameters:
         - name: user-id
@@ -56578,6 +56950,7 @@ paths:
       tags:
         - users.drive
       summary: Get documentSetVersions from users
+      description: Version information for a document set version created by a user.
       operationId: users.drives.list.items_GetDocumentSetVersions
       parameters:
         - name: user-id
@@ -56759,6 +57132,7 @@ paths:
       tags:
         - users.drive
       summary: Get driveItem from users
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: users.drives.list.items_GetDriveItem
       parameters:
         - name: user-id
@@ -56945,6 +57319,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property driveItem from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.list.items_GetDriveItemContent
       parameters:
         - name: user-id
@@ -56983,6 +57358,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.list.items_SetDriveItemContent
       parameters:
         - name: user-id
@@ -57025,6 +57401,7 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
+      description: The values of the columns set on this list item.
       operationId: users.drives.list.items_GetFields
       parameters:
         - name: user-id
@@ -57165,6 +57542,7 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
+      description: The list of previous versions of the list item.
       operationId: users.drives.list.items_ListVersions
       parameters:
         - name: user-id
@@ -57299,6 +57677,7 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
+      description: The list of previous versions of the list item.
       operationId: users.drives.list.items_GetVersions
       parameters:
         - name: user-id
@@ -57475,6 +57854,7 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
+      description: A collection of the fields and values for this version of the list item.
       operationId: users.drives.list.items.versions_GetFields
       parameters:
         - name: user-id
@@ -57636,6 +58016,7 @@ paths:
       tags:
         - users.drive
       summary: Get operations from users
+      description: The collection of long running operations for the list.
       operationId: users.drives.list_ListOperations
       parameters:
         - name: user-id
@@ -57772,6 +58153,7 @@ paths:
       tags:
         - users.drive
       summary: Get operations from users
+      description: The collection of long running operations for the list.
       operationId: users.drives.list_GetOperations
       parameters:
         - name: user-id
@@ -57921,6 +58303,7 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
+      description: The set of subscriptions on the list.
       operationId: users.drives.list_ListSubscriptions
       parameters:
         - name: user-id
@@ -58075,6 +58458,7 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
+      description: The set of subscriptions on the list.
       operationId: users.drives.list_GetSubscriptions
       parameters:
         - name: user-id
@@ -58233,6 +58617,7 @@ paths:
       tags:
         - users.drive
       summary: Get root from users
+      description: The root folder of the drive. Read-only.
       operationId: users.drives_GetRoot
       parameters:
         - name: user-id
@@ -58495,6 +58880,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place on this item.
       operationId: users.drives.root_ListActivities
       parameters:
         - name: user-id
@@ -58580,6 +58966,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place on this item.
       operationId: users.drives.root_GetActivities
       parameters:
         - name: user-id
@@ -58662,6 +59049,7 @@ paths:
       tags:
         - users.drive
       summary: Get analytics from users
+      description: Analytics about the view activities that took place on this item.
       operationId: users.drives.root_GetAnalytics
       parameters:
         - name: user-id
@@ -58739,6 +59127,7 @@ paths:
       tags:
         - users.drive
       summary: Get children from users
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: users.drives.root_ListChildren
       parameters:
         - name: user-id
@@ -58938,6 +59327,7 @@ paths:
       tags:
         - users.drive
       summary: Get children from users
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: users.drives.root_GetChildren
       parameters:
         - name: user-id
@@ -59124,6 +59514,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property children from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.root_GetChildrenContent
       parameters:
         - name: user-id
@@ -59162,6 +59553,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property children in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.root_SetChildrenContent
       parameters:
         - name: user-id
@@ -59204,6 +59596,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property root from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_GetRootContent
       parameters:
         - name: user-id
@@ -59235,6 +59628,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property root in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_SetRootContent
       parameters:
         - name: user-id
@@ -59270,6 +59664,7 @@ paths:
       tags:
         - users.drive
       summary: Get listItem from users
+      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: users.drives.root_GetListItem
       parameters:
         - name: user-id
@@ -59462,6 +59857,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place on this item.
       operationId: users.drives.root.listItem_ListActivities
       parameters:
         - name: user-id
@@ -59584,6 +59980,7 @@ paths:
       tags:
         - users.drive
       summary: Get activities from users
+      description: The list of recent activities that took place on this item.
       operationId: users.drives.root.listItem_GetActivities
       parameters:
         - name: user-id
@@ -59930,6 +60327,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property driveItem from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.root.listItem.activities_GetDriveItemContent
       parameters:
         - name: user-id
@@ -59968,6 +60366,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.root.listItem.activities_SetDriveItemContent
       parameters:
         - name: user-id
@@ -60149,6 +60548,7 @@ paths:
       tags:
         - users.drive
       summary: Get analytics from users
+      description: Analytics about the view activities that took place on this item.
       operationId: users.drives.root.listItem_GetAnalytics
       parameters:
         - name: user-id
@@ -60226,6 +60626,7 @@ paths:
       tags:
         - users.drive
       summary: Get documentSetVersions from users
+      description: Version information for a document set version created by a user.
       operationId: users.drives.root.listItem_ListDocumentSetVersions
       parameters:
         - name: user-id
@@ -60361,6 +60762,7 @@ paths:
       tags:
         - users.drive
       summary: Get documentSetVersions from users
+      description: Version information for a document set version created by a user.
       operationId: users.drives.root.listItem_GetDocumentSetVersions
       parameters:
         - name: user-id
@@ -60520,6 +60922,7 @@ paths:
       tags:
         - users.drive
       summary: Get driveItem from users
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: users.drives.root.listItem_GetDriveItem
       parameters:
         - name: user-id
@@ -60688,6 +61091,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property driveItem from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.root.listItem_GetDriveItemContent
       parameters:
         - name: user-id
@@ -60719,6 +61123,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.root.listItem_SetDriveItemContent
       parameters:
         - name: user-id
@@ -60754,6 +61159,7 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
+      description: The values of the columns set on this list item.
       operationId: users.drives.root.listItem_GetFields
       parameters:
         - name: user-id
@@ -60873,6 +61279,7 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
+      description: The list of previous versions of the list item.
       operationId: users.drives.root.listItem_ListVersions
       parameters:
         - name: user-id
@@ -60993,6 +61400,7 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
+      description: The list of previous versions of the list item.
       operationId: users.drives.root.listItem_GetVersions
       parameters:
         - name: user-id
@@ -61147,6 +61555,7 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
+      description: A collection of the fields and values for this version of the list item.
       operationId: users.drives.root.listItem.versions_GetFields
       parameters:
         - name: user-id
@@ -61287,6 +61696,7 @@ paths:
       tags:
         - users.drive
       summary: Get permissions from users
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: users.drives.root_ListPermissions
       parameters:
         - name: user-id
@@ -61429,6 +61839,7 @@ paths:
       tags:
         - users.drive
       summary: Get permissions from users
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: users.drives.root_GetPermissions
       parameters:
         - name: user-id
@@ -61585,6 +61996,7 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: users.drives.root_ListSubscriptions
       parameters:
         - name: user-id
@@ -61739,6 +62151,7 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
+      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: users.drives.root_GetSubscriptions
       parameters:
         - name: user-id
@@ -61897,6 +62310,7 @@ paths:
       tags:
         - users.drive
       summary: Get thumbnails from users
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: users.drives.root_ListThumbnails
       parameters:
         - name: user-id
@@ -62018,6 +62432,7 @@ paths:
       tags:
         - users.drive
       summary: Get thumbnails from users
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: users.drives.root_GetThumbnails
       parameters:
         - name: user-id
@@ -62162,6 +62577,7 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: users.drives.root_ListVersions
       parameters:
         - name: user-id
@@ -62286,6 +62702,7 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: users.drives.root_GetVersions
       parameters:
         - name: user-id
@@ -62514,6 +62931,7 @@ paths:
       tags:
         - users.drive
       summary: Get special from users
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: users.drives_ListSpecial
       parameters:
         - name: user-id
@@ -62713,6 +63131,7 @@ paths:
       tags:
         - users.drive
       summary: Get special from users
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: users.drives_GetSpecial
       parameters:
         - name: user-id
@@ -62899,6 +63318,7 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property special from users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_GetSpecialContent
       parameters:
         - name: user-id
@@ -62937,6 +63357,7 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property special in users
+      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_SetSpecialContent
       parameters:
         - name: user-id
@@ -63581,12 +64002,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of field definitions for this list.
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
-              description: The collection of content types present in this list.
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             items:
@@ -63943,7 +64362,6 @@ components:
               format: date-time
             description:
               type: string
-              description: Provides a user-visible description of the item. Optional.
               nullable: true
             eTag:
               type: string
@@ -64347,7 +64765,6 @@ components:
       properties:
         type:
           type: string
-          description: 'A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.'
           nullable: true
       additionalProperties:
         type: object
@@ -64594,7 +65011,6 @@ components:
           nullable: true
         frameRate:
           type: number
-          description: Frame rate of the video.
           format: double
           nullable: true
         height:
@@ -64792,7 +65208,6 @@ components:
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Details about when the activity took place. Read-only.
               format: date-time
               nullable: true
             actor:
@@ -65658,6 +66073,11 @@ components:
               type: string
               description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
               nullable: true
+            employeeLeaveDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
             employeeType:
@@ -65954,7 +66374,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
-              description: A collection of this user's license details. Read-only.
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -66146,7 +66565,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
-              description: The user's activities across devices. Read-only. Nullable.
             devices:
               type: array
               items:
@@ -66182,11 +66600,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -66919,12 +67337,10 @@ components:
           properties:
             content:
               type: string
-              description: The content stream
               format: base64url
               nullable: true
             contentUrl:
               type: string
-              description: The URL for downloading the content
               nullable: true
           additionalProperties:
             type: object
@@ -67661,6 +68077,8 @@ components:
               description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
               nullable: true
+            verifiedPublisher:
+              $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
             appManagementPolicies:
               type: array
               items:
@@ -67700,7 +68118,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
-              description: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -69037,7 +69454,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
-              description: A list of pending user consent requests.
+              description: A list of pending user consent requests. Supports $filter (eq).
           additionalProperties:
             type: object
     microsoft.graph.approval:
@@ -69844,7 +70261,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
             recentPlans:
               type: array
               items:
@@ -70023,50 +70439,40 @@ components:
           properties:
             activationUrl:
               type: string
-              description: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
             activitySourceHost:
               type: string
-              description: 'Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.'
             appActivityId:
               type: string
-              description: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
             appDisplayName:
               type: string
-              description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
               $ref: '#/components/schemas/microsoft.graph.Json'
             contentUrl:
               type: string
-              description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object expired on the server.
               format: date-time
               nullable: true
             fallbackUrl:
               type: string
-              description: 'Optional. URL used to launch the activity in a web-based app, if available.'
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
-              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             visualElements:
               $ref: '#/components/schemas/microsoft.graph.visualInfo'
@@ -70074,7 +70480,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
           additionalProperties:
             type: object
     microsoft.graph.device:
@@ -70824,7 +71229,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookSortField'
-              description: Represents the current conditions used to last sort the table. Read-only.
             matchCase:
               type: boolean
               description: Represents whether the casing impacted the last sort of the table. Read-only.
@@ -70943,11 +71347,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -71003,14 +71407,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             displayName:
               type: string
-              description: The name of the notebook.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -71078,7 +71480,6 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -71101,7 +71502,6 @@ components:
           properties:
             self:
               type: string
-              description: The endpoint where you can get details about the page. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -71308,11 +71708,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
+          description: 'A list of failed health check items. If the status property is available, this property will be empty.'
         status:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
       additionalProperties:
         type: object
@@ -71788,6 +72190,26 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.verifiedPublisher:
+      title: verifiedPublisher
+      type: object
+      properties:
+        addedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the verified publisher was first added or most recently updated.
+          format: date-time
+          nullable: true
+        displayName:
+          type: string
+          description: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
+          nullable: true
+        verifiedPublisherId:
+          type: string
+          description: The ID of the verified publisher from the app publisher's Partner Center account.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.appManagementPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.policyBase'
@@ -72048,10 +72470,8 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The categories associated with the item
             changeKey:
               type: string
-              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -72951,7 +73371,7 @@ components:
           properties:
             query:
               type: string
-              description: The query specifying who will be the reviewer. See table for examples.
+              description: The query specifying who will be the reviewer.
               nullable: true
             queryRoot:
               type: string
@@ -73430,6 +73850,10 @@ components:
         clientIdentifier:
           type: string
           description: Configuration Manager Client Id from SCCM
+          nullable: true
+        clientVersion:
+          type: string
+          description: Configuration Manager Client version from SCCM
           nullable: true
         isBlocked:
           type: boolean
@@ -74595,6 +75019,12 @@ components:
             displayName:
               type: string
               description: Name of the discovered application. Read-only
+              nullable: true
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.detectedAppPlatformType'
+            publisher:
+              type: string
+              description: 'Indicates the publisher of the discovered application. For example: ''Microsoft''.  The default value is an empty string.'
               nullable: true
             sizeInByte:
               type: integer
@@ -75860,43 +76290,36 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
-              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             activity:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
@@ -76377,12 +76800,12 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             password:
@@ -77519,21 +77942,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printerDefaults'
             displayName:
               type: string
-              description: The name of the printer/printerShare.
               nullable: true
             isAcceptingJobs:
               type: boolean
-              description: Whether the printer/printerShare is currently accepting new print jobs.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
             manufacturer:
               type: string
-              description: The manufacturer of the printer/printerShare.
               nullable: true
             model:
               type: string
-              description: The model name of the printer/printerShare.
               nullable: true
             name:
               type: string
@@ -77544,7 +77963,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
-              description: The list of jobs that are queued for printing by the printer/printerShare.
           additionalProperties:
             type: object
     microsoft.graph.printerShareViewpoint:
@@ -77618,12 +78036,15 @@ components:
       properties:
         additionalDetails:
           type: string
+          description: Additional message for this health check.
           nullable: true
         displayName:
           type: string
+          description: The connectivity health check item name.
         lastHealthCheckDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         result:
@@ -79353,6 +79774,59 @@ components:
           additionalProperties:
             type: object
           description: The security baseline compliance state of a setting for a device
+    microsoft.graph.detectedAppPlatformType:
+      title: detectedAppPlatformType
+      enum:
+        - unknown
+        - windows
+        - windowsMobile
+        - windowsHolographic
+        - ios
+        - macOS
+        - chromeOS
+        - androidOSP
+        - androidDeviceAdministrator
+        - androidWorkProfile
+        - androidDedicatedAndFullyManaged
+      type: string
+      description: 'Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).'
+      x-ms-enum:
+        name: detectedAppPlatformType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Set to unknown when platform cannot be determined.
+            name: unknown
+          - value: windows
+            description: Indicates that the platform of the detected application is Windows.
+            name: windows
+          - value: windowsMobile
+            description: Indicates that the platform of the detected application is Windows Mobile.
+            name: windowsMobile
+          - value: windowsHolographic
+            description: Indicates that the platform of the detected application is Windows Holographic.
+            name: windowsHolographic
+          - value: ios
+            description: Indicates that the platform of the detected application is iOS.
+            name: ios
+          - value: macOS
+            description: Indicates that the platform of the detected application is macOS.
+            name: macOS
+          - value: chromeOS
+            description: Indicates that the platform of the detected application is ChromeOS.
+            name: chromeOS
+          - value: androidOSP
+            description: Indicates that the platform of the detected application is Android open source project.
+            name: androidOSP
+          - value: androidDeviceAdministrator
+            description: Indicates that the platform of the detected application is Android device administrator.
+            name: androidDeviceAdministrator
+          - value: androidWorkProfile
+            description: Indicates that the platform of the detected application is Android work profile.
+            name: androidWorkProfile
+          - value: androidDedicatedAndFullyManaged
+            description: Indicates that the platform of the detected application is Android dedicated and fully managed.
+            name: androidDedicatedAndFullyManaged
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -80576,7 +81050,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
               type: string
-              description: Verbose description of the application.
               nullable: true
             displayName:
               type: string
