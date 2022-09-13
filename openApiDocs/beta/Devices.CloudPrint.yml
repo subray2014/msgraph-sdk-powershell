@@ -3313,12 +3313,6 @@ paths:
               operationId: print.reports.getAttackSimulationTrainingUserCoverage
             getAzureADApplicationSignInSummary:
               operationId: print.reports.getAzureADApplicationSignInSummary
-            getAzureADFeatureUsage:
-              operationId: print.reports.getAzureADFeatureUsage
-            getAzureADLicenseUsage:
-              operationId: print.reports.getAzureADLicenseUsage
-            getAzureADUserFeatureUsage:
-              operationId: print.reports.getAzureADUserFeatureUsage
             getBrowserDistributionUserCounts:
               operationId: print.reports.getBrowserDistributionUserCounts
             getBrowserUserCounts:
@@ -5336,94 +5330,6 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.applicationSignInSummary'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/print/reports/microsoft.graph.getAzureADFeatureUsage(period=''{period}'')':
-    get:
-      tags:
-        - print.Functions
-      summary: Invoke function getAzureADFeatureUsage
-      operationId: print.reports_getAzureADFeatureUsage
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of reportRoot
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.azureADFeatureUsage'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/print/reports/microsoft.graph.getAzureADLicenseUsage(period=''{period}'')':
-    get:
-      tags:
-        - print.Functions
-      summary: Invoke function getAzureADLicenseUsage
-      operationId: print.reports_getAzureADLicenseUsage
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of reportRoot
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.azureADLicenseUsage'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  /print/reports/microsoft.graph.getAzureADUserFeatureUsage():
-    get:
-      tags:
-        - print.Functions
-      summary: Invoke function getAzureADUserFeatureUsage
-      operationId: print.reports_getAzureADUserFeatureUsage
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of reportRoot
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.azureADUserFeatureUsage'
                 additionalProperties:
                   type: object
         default:
@@ -13497,70 +13403,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.azureADFeatureUsage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: azureADFeatureUsage
-          type: object
-          properties:
-            featureName:
-              type: string
-            snapshotDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            usage:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.azureADLicenseUsage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: azureADLicenseUsage
-          type: object
-          properties:
-            licenseInfoDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.licenseInfoDetail'
-            snapshotDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-          additionalProperties:
-            type: object
-    microsoft.graph.azureADUserFeatureUsage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: azureADUserFeatureUsage
-          type: object
-          properties:
-            featureUsageDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.featureUsageDetail'
-            lastUpdatedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            licenseAssigned:
-              $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-            licenseRecommended:
-              $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-            userDisplayName:
-              type: string
-              nullable: true
-            userId:
-              type: string
-            userPrincipalName:
-              type: string
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.credentialUsageSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15781,65 +15623,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.trainingStatus'
       additionalProperties:
         type: object
-    microsoft.graph.licenseInfoDetail:
-      title: licenseInfoDetail
-      type: object
-      properties:
-        licenseType:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-        totalAssignedCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        totalLicenseCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        totalUsageCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.featureUsageDetail:
-      title: featureUsageDetail
-      type: object
-      properties:
-        featureName:
-          type: string
-          nullable: true
-        lastConfiguredDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        lastUsedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        licenseAssigned:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-        licenseRequired:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-      additionalProperties:
-        type: object
-    microsoft.graph.azureADLicenseType:
-      title: azureADLicenseType
-      enum:
-        - none
-        - free
-        - basic
-        - premiumP1
-        - premiumP2
-        - unknownFutureValue
-      type: string
     microsoft.graph.usageAuthMethod:
       title: usageAuthMethod
       enum:
@@ -17298,6 +17081,7 @@ components:
           items:
             type: string
             nullable: true
+          description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
     microsoft.graph.customSecurityAttributeValue:
@@ -17566,6 +17350,8 @@ components:
               nullable: true
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            diskEncryptionState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -23091,6 +22877,15 @@ components:
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDiskEncryptionState:
+      title: cloudPcDiskEncryptionState
+      enum:
+        - notAvailable
+        - notEncryped
+        - encryptedUsingPlatformManagedKey
+        - encryptedUsingCustomerManagedKey
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -34483,7 +34278,7 @@ components:
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The interval between synchronization iterations.
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'

@@ -27032,7 +27032,7 @@ paths:
       tags:
         - groups.site
       summary: Get sets from groups
-      description: Collection of all sets available in the term store.
+      description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
       operationId: groups.sites.termStore_ListSets
       parameters:
         - name: group-id
@@ -27166,7 +27166,7 @@ paths:
       tags:
         - groups.site
       summary: Get sets from groups
-      description: Collection of all sets available in the term store.
+      description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
       operationId: groups.sites.termStore_GetSets
       parameters:
         - name: group-id
@@ -48440,7 +48440,7 @@ paths:
       tags:
         - groups.site
       summary: Get sets from groups
-      description: Collection of all sets available in the term store.
+      description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
       operationId: groups.sites.termStores_ListSets
       parameters:
         - name: group-id
@@ -48590,7 +48590,7 @@ paths:
       tags:
         - groups.site
       summary: Get sets from groups
-      description: Collection of all sets available in the term store.
+      description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
       operationId: groups.sites.termStores_GetSets
       parameters:
         - name: group-id
@@ -81310,7 +81310,7 @@ paths:
       tags:
         - sites.store
       summary: Get sets from sites
-      description: Collection of all sets available in the term store.
+      description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
       operationId: sites.termStore_ListSets
       parameters:
         - name: site-id
@@ -81428,7 +81428,7 @@ paths:
       tags:
         - sites.store
       summary: Get sets from sites
-      description: Collection of all sets available in the term store.
+      description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
       operationId: sites.termStore_GetSets
       parameters:
         - name: site-id
@@ -100638,7 +100638,7 @@ paths:
       tags:
         - sites.store
       summary: Get sets from sites
-      description: Collection of all sets available in the term store.
+      description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
       operationId: sites.termStores_ListSets
       parameters:
         - name: site-id
@@ -100772,7 +100772,7 @@ paths:
       tags:
         - sites.store
       summary: Get sets from sites
-      description: Collection of all sets available in the term store.
+      description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
       operationId: sites.termStores_GetSets
       parameters:
         - name: site-id
@@ -115121,7 +115121,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.set'
-              description: Collection of all sets available in the term store.
+              description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
           additionalProperties:
             type: object
     microsoft.graph.termStore.group:
@@ -119638,6 +119638,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+            pinnedMessages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
             tabs:
               type: array
               items:
@@ -122245,6 +122249,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: Replies for a specified message. Supports $expand for channel messages.
+          additionalProperties:
+            type: object
+    microsoft.graph.pinnedChatMessageInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: pinnedChatMessageInfo
+          type: object
+          properties:
+            message:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
           additionalProperties:
             type: object
     microsoft.graph.teamsTab:

@@ -1188,6 +1188,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /deviceManagement/monitoring/alertRecords/microsoft.graph.deviceManagement.getPortalNotifications():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getPortalNotifications
+      operationId: deviceManagement.monitoring.alertRecords_getPortalNotifications
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of alertRecord
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceManagement.portalNotification'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/resourceOperations/{resourceOperation-id}/microsoft.graph.getScopesForUser(userid=''{userid}'')':
     get:
       tags:
@@ -2452,6 +2476,33 @@ components:
       additionalProperties:
         type: object
       description: The user experience analytics Work From Anywhere metrics devices summary.
+    microsoft.graph.deviceManagement.portalNotification:
+      title: portalNotification
+      type: object
+      properties:
+        alertImpact:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertImpact'
+        alertRecordId:
+          type: string
+          nullable: true
+        alertRuleId:
+          type: string
+          nullable: true
+        alertRuleName:
+          type: string
+          nullable: true
+        alertRuleTemplate:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRuleTemplate'
+        id:
+          type: string
+          nullable: true
+        isPortalNotificationSent:
+          type: boolean
+          nullable: true
+        severity:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.ruleSeverityType'
+      additionalProperties:
+        type: object
     microsoft.graph.tenantAttachRBACState:
       title: tenantAttachRBACState
       type: object
@@ -3330,6 +3381,37 @@ components:
       additionalProperties:
         type: object
       description: The user experience analytics work from anywhere Windows 10 devices summary.
+    microsoft.graph.deviceManagement.alertImpact:
+      title: alertImpact
+      type: object
+      properties:
+        aggregationType:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.aggregationType'
+        value:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagement.alertRuleTemplate:
+      title: alertRuleTemplate
+      enum:
+        - cloudPcProvisionScenario
+        - cloudPcImageUploadScenario
+        - cloudPcOnPremiseNetworkConnectionCheckScenario
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceManagement.ruleSeverityType:
+      title: ruleSeverityType
+      enum:
+        - unknown
+        - informational
+        - warning
+        - critical
+        - unknownFutureValue
+      type: string
     microsoft.graph.diskType:
       title: diskType
       enum:
@@ -3470,6 +3552,15 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
+    microsoft.graph.deviceManagement.aggregationType:
+      title: aggregationType
+      enum:
+        - count
+        - percentage
+        - affectedCloudPcCount
+        - affectedCloudPcPercentage
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code

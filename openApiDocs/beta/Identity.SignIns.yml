@@ -15364,6 +15364,7 @@ paths:
                 - b2bDirectConnectOutbound
                 - inboundTrust
                 - isServiceDefault
+                - tenantRestrictions
               type: string
         - name: $expand
           in: query
@@ -15475,6 +15476,8 @@ paths:
                 - isServiceProvider desc
                 - tenantId
                 - tenantId desc
+                - tenantRestrictions
+                - tenantRestrictions desc
               type: string
         - name: $select
           in: query
@@ -15493,6 +15496,7 @@ paths:
                 - inboundTrust
                 - isServiceProvider
                 - tenantId
+                - tenantRestrictions
               type: string
         - name: $expand
           in: query
@@ -15570,6 +15574,7 @@ paths:
                 - inboundTrust
                 - isServiceProvider
                 - tenantId
+                - tenantRestrictions
               type: string
         - name: $expand
           in: query
@@ -22712,11 +22717,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.microsoftAuthenticatorAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -22751,11 +22751,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}':
     get:
@@ -22826,11 +22821,6 @@ paths:
                 microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -22866,11 +22856,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -22905,11 +22890,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device':
     get:
@@ -23065,11 +23045,6 @@ paths:
               operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -23105,11 +23080,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -23144,11 +23114,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/commands':
     get:
@@ -23247,11 +23212,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.commandCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -23294,11 +23254,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.command'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/commands/{command-id}':
     get:
@@ -23382,11 +23337,6 @@ paths:
                 command-id: $request.path.command-id
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -23430,11 +23380,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -23477,11 +23422,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/commands/{command-id}/responsepayload':
     get:
@@ -23547,11 +23487,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.payloadResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/extensions':
     get:
@@ -23624,11 +23559,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -23671,11 +23601,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/extensions/{extension-id}':
     get:
@@ -23742,11 +23667,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -23790,11 +23710,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -23837,11 +23752,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/memberOf':
     get:
@@ -23917,11 +23827,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -23992,11 +23897,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredOwners':
     get:
@@ -24072,11 +23972,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -24130,11 +24025,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredOwners/$ref':
     get:
@@ -24185,11 +24075,6 @@ paths:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -24223,11 +24108,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredUsers':
     get:
@@ -24303,11 +24183,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -24378,11 +24253,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/transitiveMemberOf':
     get:
@@ -24458,11 +24328,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -24533,11 +24398,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/usageRights':
     get:
@@ -24619,11 +24479,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.usageRightCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -24666,11 +24521,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/usageRights/{usageRight-id}':
     get:
@@ -24740,11 +24590,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -24788,11 +24633,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -24835,11 +24675,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2022-08-29T00:00:00.0000000-07:00'
-        date: '2021-05-18T00:00:00.0000000-07:00'
-        version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/operations':
     get:
@@ -34858,6 +34693,8 @@ components:
               type: boolean
               description: 'If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.'
               nullable: true
+            tenantRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTenantRestrictions'
           additionalProperties:
             type: object
     microsoft.graph.crossTenantAccessPolicyConfigurationPartner:
@@ -34881,6 +34718,8 @@ components:
         tenantId:
           type: string
           description: The tenant identifier for the partner Azure AD organization. Read-only. Key.
+        tenantRestrictions:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTenantRestrictions'
       additionalProperties:
         type: object
     microsoft.graph.tenantAppManagementPolicy:
@@ -36694,6 +36533,7 @@ components:
           items:
             type: string
             nullable: true
+          description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
     microsoft.graph.customSecurityAttributeValue:
@@ -36986,6 +36826,8 @@ components:
               nullable: true
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            diskEncryptionState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -40332,6 +40174,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.crossTenantAccessPolicyTenantRestrictions:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
+        - title: crossTenantAccessPolicyTenantRestrictions
+          type: object
+          properties:
+            devices:
+              $ref: '#/components/schemas/microsoft.graph.devicesFilter'
+          additionalProperties:
+            type: object
     microsoft.graph.azureAdJoinPolicy:
       title: azureAdJoinPolicy
       type: object
@@ -42007,6 +41859,15 @@ components:
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDiskEncryptionState:
+      title: cloudPcDiskEncryptionState
+      enum:
+        - notAvailable
+        - notEncryped
+        - encryptedUsingPlatformManagedKey
+        - encryptedUsingCustomerManagedKey
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -48401,6 +48262,17 @@ components:
           description: 'Specifies whether to target users, groups, or applications with this rule.'
       additionalProperties:
         type: object
+    microsoft.graph.devicesFilter:
+      title: devicesFilter
+      type: object
+      properties:
+        mode:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTargetConfigurationAccessType'
+        rule:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewApplyAction:
       title: accessReviewApplyAction
       type: object
@@ -54270,7 +54142,7 @@ components:
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The interval between synchronization iterations.
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'

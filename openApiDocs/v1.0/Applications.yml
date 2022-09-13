@@ -57,6 +57,8 @@ paths:
                 - certification desc
                 - createdDateTime
                 - createdDateTime desc
+                - defaultRedirectUri
+                - defaultRedirectUri desc
                 - description
                 - description desc
                 - disabledByMicrosoftStatus
@@ -129,6 +131,7 @@ paths:
                 - appRoles
                 - certification
                 - createdDateTime
+                - defaultRedirectUri
                 - description
                 - disabledByMicrosoftStatus
                 - displayName
@@ -249,6 +252,7 @@ paths:
                 - appRoles
                 - certification
                 - createdDateTime
+                - defaultRedirectUri
                 - description
                 - disabledByMicrosoftStatus
                 - displayName
@@ -723,7 +727,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
-      description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).'
       operationId: applications_ListFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -836,7 +840,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
-      description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).'
       operationId: applications_GetFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -6925,6 +6929,9 @@ components:
               description: 'The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.'
               format: date-time
               nullable: true
+            defaultRedirectUri:
+              type: string
+              nullable: true
             description:
               type: string
               description: 'Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
@@ -7031,7 +7038,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
-              description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+              description: 'Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).'
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -7906,6 +7913,10 @@ components:
           items:
             type: string
           description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
+        redirectUriSettings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.redirectUriSettings'
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -8302,6 +8313,21 @@ components:
         enableIdTokenIssuance:
           type: boolean
           description: Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriSettings:
+      title: redirectUriSettings
+      type: object
+      properties:
+        index:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        uri:
+          type: string
           nullable: true
       additionalProperties:
         type: object

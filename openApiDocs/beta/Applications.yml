@@ -1059,7 +1059,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
-      description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).'
       operationId: applications_ListFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -1172,7 +1172,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
-      description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).'
       operationId: applications_GetFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -1930,7 +1930,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get owners from applications
-      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
       operationId: applications_ListOwners
       parameters:
         - name: application-id
@@ -2042,7 +2042,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of owners from applications
-      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
       operationId: applications_ListOwnersGraphBPreRef
       parameters:
         - name: application-id
@@ -16176,7 +16176,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
-              description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+              description: 'Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).'
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -16185,7 +16185,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+              description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
             tokenIssuancePolicies:
               type: array
               items:
@@ -17790,7 +17790,7 @@ components:
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The interval between synchronization iterations.
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'

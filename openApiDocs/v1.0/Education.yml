@@ -17866,6 +17866,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+            pinnedMessages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
             tabs:
               type: array
               items:
@@ -19067,7 +19071,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.set'
-              description: Collection of all sets available in the term store.
+              description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
           additionalProperties:
             type: object
     microsoft.graph.plannerPlan:
@@ -21429,6 +21433,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: Replies for a specified message. Supports $expand for channel messages.
+          additionalProperties:
+            type: object
+    microsoft.graph.pinnedChatMessageInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: pinnedChatMessageInfo
+          type: object
+          properties:
+            message:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
           additionalProperties:
             type: object
     microsoft.graph.teamsTab:

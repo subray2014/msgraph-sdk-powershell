@@ -77701,6 +77701,7 @@ components:
           items:
             type: string
             nullable: true
+          description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
     microsoft.graph.customSecurityAttributeValue:
@@ -77993,6 +77994,8 @@ components:
               nullable: true
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            diskEncryptionState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -82011,6 +82014,15 @@ components:
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDiskEncryptionState:
+      title: cloudPcDiskEncryptionState
+      enum:
+        - notAvailable
+        - notEncryped
+        - encryptedUsingPlatformManagedKey
+        - encryptedUsingCustomerManagedKey
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -92856,7 +92868,7 @@ components:
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The interval between synchronization iterations.
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'

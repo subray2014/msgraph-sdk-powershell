@@ -664,6 +664,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - pinnedMessages
                 - tabs
               type: string
         - name: $expand
@@ -680,6 +681,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - pinnedMessages
                 - tabs
               type: string
       responses:
@@ -751,6 +753,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - pinnedMessages
                 - tabs
               type: string
         - name: $expand
@@ -767,6 +770,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - pinnedMessages
                 - tabs
               type: string
       responses:
@@ -787,6 +791,10 @@ paths:
                 chat-id: $request.path.chat-id
             messages:
               operationId: chats.ListMessages
+              parameters:
+                chat-id: $request.path.chat-id
+            pinnedMessages:
+              operationId: chats.ListPinnedMessages
               parameters:
                 chat-id: $request.path.chat-id
             tabs:
@@ -2960,6 +2968,332 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/chats/{chat-id}/pinnedMessages':
+    get:
+      tags:
+        - chats.pinnedChatMessageInfo
+      summary: Get pinnedMessages from chats
+      operationId: chats_ListPinnedMessages
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - message
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - message
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.pinnedChatMessageInfoCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.pinnedChatMessageInfo
+      summary: Create new navigation property to pinnedMessages for chats
+      operationId: chats_CreatePinnedMessages
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}':
+    get:
+      tags:
+        - chats.pinnedChatMessageInfo
+      summary: Get pinnedMessages from chats
+      operationId: chats_GetPinnedMessages
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: pinnedChatMessageInfo-id
+          in: path
+          description: 'key: id of pinnedChatMessageInfo'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: pinnedChatMessageInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - message
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - message
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+          links:
+            message:
+              operationId: chats.PinnedMessages.GetMessage
+              parameters:
+                chat-id: $request.path.chat-id
+                pinnedChatMessageInfo-id: $request.path.pinnedChatMessageInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - chats.pinnedChatMessageInfo
+      summary: Update the navigation property pinnedMessages in chats
+      operationId: chats_UpdatePinnedMessages
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: pinnedChatMessageInfo-id
+          in: path
+          description: 'key: id of pinnedChatMessageInfo'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: pinnedChatMessageInfo
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - chats.pinnedChatMessageInfo
+      summary: Delete navigation property pinnedMessages for chats
+      operationId: chats_DeletePinnedMessages
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: pinnedChatMessageInfo-id
+          in: path
+          description: 'key: id of pinnedChatMessageInfo'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: pinnedChatMessageInfo
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}/message':
+    get:
+      tags:
+        - chats.pinnedChatMessageInfo
+      summary: Get message from chats
+      operationId: chats.pinnedMessages_GetMessage
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: pinnedChatMessageInfo-id
+          in: path
+          description: 'key: id of pinnedChatMessageInfo'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: pinnedChatMessageInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageType
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            hostedContents:
+              operationId: chats.pinnedMessages.Message.ListHostedContents
+              parameters:
+                chat-id: $request.path.chat-id
+                pinnedChatMessageInfo-id: $request.path.pinnedChatMessageInfo-id
+            replies:
+              operationId: chats.pinnedMessages.Message.ListReplies
+              parameters:
+                chat-id: $request.path.chat-id
+                pinnedChatMessageInfo-id: $request.path.pinnedChatMessageInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/chats/{chat-id}/tabs':
     get:
       tags:
@@ -24812,6 +25146,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - pinnedMessages
                 - tabs
               type: string
         - name: $expand
@@ -24828,6 +25163,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - pinnedMessages
                 - tabs
               type: string
       responses:
@@ -24914,6 +25250,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - pinnedMessages
                 - tabs
               type: string
         - name: $expand
@@ -24930,6 +25267,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - pinnedMessages
                 - tabs
               type: string
       responses:
@@ -24952,6 +25290,11 @@ paths:
                 chat-id: $request.path.chat-id
             messages:
               operationId: users.Chats.ListMessages
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+            pinnedMessages:
+              operationId: users.Chats.ListPinnedMessages
               parameters:
                 user-id: $request.path.user-id
                 chat-id: $request.path.chat-id
@@ -27205,6 +27548,383 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/pinnedMessages':
+    get:
+      tags:
+        - users.chat
+      summary: Get pinnedMessages from users
+      operationId: users.chats_ListPinnedMessages
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - message
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - message
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.pinnedChatMessageInfoCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.chat
+      summary: Create new navigation property to pinnedMessages for users
+      operationId: users.chats_CreatePinnedMessages
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}':
+    get:
+      tags:
+        - users.chat
+      summary: Get pinnedMessages from users
+      operationId: users.chats_GetPinnedMessages
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: pinnedChatMessageInfo-id
+          in: path
+          description: 'key: id of pinnedChatMessageInfo'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: pinnedChatMessageInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - message
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - message
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+          links:
+            message:
+              operationId: users.chats.PinnedMessages.GetMessage
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+                pinnedChatMessageInfo-id: $request.path.pinnedChatMessageInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.chat
+      summary: Update the navigation property pinnedMessages in users
+      operationId: users.chats_UpdatePinnedMessages
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: pinnedChatMessageInfo-id
+          in: path
+          description: 'key: id of pinnedChatMessageInfo'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: pinnedChatMessageInfo
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.chat
+      summary: Delete navigation property pinnedMessages for users
+      operationId: users.chats_DeletePinnedMessages
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: pinnedChatMessageInfo-id
+          in: path
+          description: 'key: id of pinnedChatMessageInfo'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: pinnedChatMessageInfo
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}/message':
+    get:
+      tags:
+        - users.chat
+      summary: Get message from users
+      operationId: users.chats.pinnedMessages_GetMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: pinnedChatMessageInfo-id
+          in: path
+          description: 'key: id of pinnedChatMessageInfo'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: pinnedChatMessageInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageType
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            hostedContents:
+              operationId: users.chats.pinnedMessages.Message.ListHostedContents
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+                pinnedChatMessageInfo-id: $request.path.pinnedChatMessageInfo-id
+            replies:
+              operationId: users.chats.pinnedMessages.Message.ListReplies
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+                pinnedChatMessageInfo-id: $request.path.pinnedChatMessageInfo-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39914,6 +40634,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - pinnedMessages
                 - tabs
               type: string
         - name: $expand
@@ -39930,6 +40651,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - pinnedMessages
                 - tabs
               type: string
       responses:
@@ -39952,6 +40674,11 @@ paths:
                 userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
             messages:
               operationId: users.teamwork.installedApps.Chat.ListMessages
+              parameters:
+                user-id: $request.path.user-id
+                userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
+            pinnedMessages:
+              operationId: users.teamwork.installedApps.Chat.ListPinnedMessages
               parameters:
                 user-id: $request.path.user-id
                 userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
@@ -40083,6 +40810,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+            pinnedMessages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
             tabs:
               type: array
               items:
@@ -40284,6 +41015,16 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.pinnedChatMessageInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: pinnedChatMessageInfo
+          type: object
+          properties:
+            message:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          additionalProperties:
+            type: object
     microsoft.graph.teamsTab:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43441,6 +44182,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.pinnedChatMessageInfoCollectionResponse:
+      title: Collection of pinnedChatMessageInfo
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.teamsTabCollectionResponse:
       title: Collection of teamsTab
       type: object
@@ -45468,7 +46221,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.set'
-              description: Collection of all sets available in the term store.
+              description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
           additionalProperties:
             type: object
     microsoft.graph.plannerPlan:
@@ -52129,6 +52882,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContentCollectionResponse'
+    microsoft.graph.pinnedChatMessageInfoCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfoCollectionResponse'
     microsoft.graph.teamsTabCollectionResponse:
       description: Retrieved collection
       content:

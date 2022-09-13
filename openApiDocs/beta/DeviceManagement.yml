@@ -41,6 +41,7 @@ paths:
                 - subscriptionState
                 - userExperienceAnalyticsSettings
                 - windowsMalwareOverview
+                - monitoring
                 - virtualEndpoint
                 - androidDeviceOwnerEnrollmentProfiles
                 - androidForWorkAppConfigurationSchemas
@@ -210,6 +211,7 @@ paths:
             items:
               enum:
                 - '*'
+                - monitoring
                 - virtualEndpoint
                 - androidDeviceOwnerEnrollmentProfiles
                 - androidForWorkAppConfigurationSchemas
@@ -376,6 +378,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagement'
           links:
+            monitoring:
+              operationId: deviceManagement.GetMonitoring
             virtualEndpoint:
               operationId: deviceManagement.GetVirtualEndpoint
             androidDeviceOwnerEnrollmentProfiles:
@@ -46328,6 +46332,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSettings'
             windowsMalwareOverview:
               $ref: '#/components/schemas/microsoft.graph.windowsMalwareOverview'
+            monitoring:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagement.monitoring'
             virtualEndpoint:
               $ref: '#/components/schemas/microsoft.graph.virtualEndpoint'
             androidDeviceOwnerEnrollmentProfiles:
@@ -53849,6 +53855,22 @@ components:
       additionalProperties:
         type: object
       description: Windows device malware overview.
+    microsoft.graph.deviceManagement.monitoring:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: monitoring
+          type: object
+          properties:
+            alertRecords:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRecord'
+            alertRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRule'
+          additionalProperties:
+            type: object
     microsoft.graph.virtualEndpoint:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -63453,6 +63475,73 @@ components:
       additionalProperties:
         type: object
       description: Count of devices with malware for each OS version
+    microsoft.graph.deviceManagement.alertRecord:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: alertRecord
+          type: object
+          properties:
+            alertImpact:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertImpact'
+            alertRuleId:
+              type: string
+              nullable: true
+            alertRuleTemplate:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRuleTemplate'
+            detectedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            resolvedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagement.ruleSeverityType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertStatusType'
+          additionalProperties:
+            type: object
+    microsoft.graph.deviceManagement.alertRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: alertRule
+          type: object
+          properties:
+            alertRuleTemplate:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRuleTemplate'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            enabled:
+              type: boolean
+              nullable: true
+            isSystemRule:
+              type: boolean
+              nullable: true
+            notificationChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagement.notificationChannel'
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagement.ruleSeverityType'
+            threshold:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagement.ruleThreshold'
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcAuditEvent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -63507,6 +63596,8 @@ components:
               nullable: true
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            diskEncryptionState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -66890,6 +66981,7 @@ components:
           items:
             type: string
             nullable: true
+          description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
     microsoft.graph.customSecurityAttributeValue:
@@ -70387,6 +70479,77 @@ components:
           - value: reset
             description: Reset device enrolled in Company Portal
             name: reset
+    microsoft.graph.deviceManagement.alertImpact:
+      title: alertImpact
+      type: object
+      properties:
+        aggregationType:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.aggregationType'
+        value:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagement.alertRuleTemplate:
+      title: alertRuleTemplate
+      enum:
+        - cloudPcProvisionScenario
+        - cloudPcImageUploadScenario
+        - cloudPcOnPremiseNetworkConnectionCheckScenario
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceManagement.ruleSeverityType:
+      title: ruleSeverityType
+      enum:
+        - unknown
+        - informational
+        - warning
+        - critical
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceManagement.alertStatusType:
+      title: alertStatusType
+      enum:
+        - active
+        - resolved
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceManagement.notificationChannel:
+      title: notificationChannel
+      type: object
+      properties:
+        notificationChannelType:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.notificationChannelType'
+        notificationReceivers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagement.notificationReceiver'
+        receivers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagement.ruleThreshold:
+      title: ruleThreshold
+      type: object
+      properties:
+        aggregation:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.aggregationType'
+        operator:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.operatorType'
+        target:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcAuditActivityOperationType:
       title: cloudPcAuditActivityOperationType
       enum:
@@ -70499,6 +70662,15 @@ components:
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDiskEncryptionState:
+      title: cloudPcDiskEncryptionState
+      enum:
+        - notAvailable
+        - notEncryped
+        - encryptedUsingPlatformManagedKey
+        - encryptedUsingCustomerManagedKey
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -76918,6 +77090,47 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.deviceManagement.aggregationType:
+      title: aggregationType
+      enum:
+        - count
+        - percentage
+        - affectedCloudPcCount
+        - affectedCloudPcPercentage
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceManagement.notificationChannelType:
+      title: notificationChannelType
+      enum:
+        - portal
+        - email
+        - phoneCall
+        - sms
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceManagement.notificationReceiver:
+      title: notificationReceiver
+      type: object
+      properties:
+        contactInformation:
+          type: string
+          nullable: true
+        locale:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagement.operatorType:
+      title: operatorType
+      enum:
+        - greaterOrEqual
+        - equal
+        - greater
+        - less
+        - lessOrEqual
+        - notEqual
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcAuditActorType:
       title: cloudPcAuditActorType
       enum:
@@ -82212,7 +82425,7 @@ components:
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The interval between synchronization iterations.
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'

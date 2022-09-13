@@ -5807,6 +5807,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/monitoring/alertRecords/{alertRecord-id}/microsoft.graph.deviceManagement.setPortalNotificationAsSent':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action setPortalNotificationAsSent
+      operationId: deviceManagement.monitoring.alertRecords_setPortalNotificationAsSent
+      parameters:
+        - name: alertRecord-id
+          in: path
+          description: 'key: id of alertRecord'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: alertRecord
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate-id}/microsoft.graph.sendTestMessage':
     post:
       tags:
