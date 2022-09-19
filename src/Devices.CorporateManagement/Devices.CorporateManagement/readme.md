@@ -67,16 +67,25 @@ directive:
       subject: Io(Lob|Managed)
     set:
       subject: iOS$1
-# Rename DeviceAppManagement* cmdlets to DeviceAppMgt*. Alias DeviceAppMgt* to DeviceAppManagement*.
-# This should always be the last directive.
   - where:
-      subject: ^DeviceAppManagement.*
+      verb: Get
+      subject: ^DeviceAppManagementMobileAppTopMobileApp$
+      variant: GetViaIdentity
+      parameter-name: Count
     set:
-      alias: ${verb}-Mg${subject}
+      parameter-name: ItemCount
   - where:
-      subject: (.*)(DeviceAppManagement)(.*)
+      verb: Get
+      subject: ^DeviceAppManagementMobileAppTopMobileApp$
+      variant: ^Get$
+      parameter-name: Count1
     set:
-      subject: $1DeviceAppMgt$3
+      parameter-name: ItemCount
+# Alias DeviceAppManagement* cmdlets to DeviceAppMgt*.
+  - where:
+      subject: ^DeviceAppManagement(.*)
+    set:
+      alias: ${verb}-MgDeviceAppMgt$1
 # Rename cmdlets.
   - where:
       subject: ^(Office)(Configuration)(ClientConfiguration.*)
