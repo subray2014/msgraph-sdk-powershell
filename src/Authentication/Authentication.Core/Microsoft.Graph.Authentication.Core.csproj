@@ -26,7 +26,7 @@
     <PackageReference Include="System.Text.Json" Version="6.0.5" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
   </ItemGroup>
-  <!-- <Target Name="CopyFiles" AfterTargets="Build">
+  <Target Name="CopyFiles" AfterTargets="Build">
     <Copy SourceFiles="@(PreLoadAssemblies)" DestinationFolder="$(OutputPath)/publish" />
-  </Target> -->
+  </Target>
 </Project>

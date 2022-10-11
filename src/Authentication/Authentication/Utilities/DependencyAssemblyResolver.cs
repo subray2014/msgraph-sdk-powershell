@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 
 using Microsoft.Graph.PowerShell.Authentication.Common;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -84,9 +85,25 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
 
         internal static void Load()
         {
-            DependencySettings dependencySettings = new DependencySettings();
-            Dependencies = dependencySettings.SharedDependencies;
-            MultiFrameworkDependencies = dependencySettings.MultiFrameworkDependencies;
+            // OnImport: Read dependencies from file.
+            string path = Path.Combine(Environment.CurrentDirectory, "Dependencies", "Dependencies.json");
+
+            //using (var fileProvider = ProtectedFileProvider.CreateFileProvider(path, FileProtection.SharedRead))
+            //{
+            //    string contents = fileProvider.CreateReader().ReadToEnd();
+            //    var dependencySettings = JsonConvert.DeserializeObject<DependencySettings>(contents);
+            //    //SharedDependencies = dependencySettings.SharedDependencies;
+            //    MultiFrameworkDependencies = dependencySettings.MultiFrameworkDependencies;
+            //}
+
+            var serializer = new JsonSerializer();
+            using (StreamReader sr = new StreamReader(path))
+            using (JsonReader reader = new JsonTextReader(sr))
+            {
+                var dependencySettings = serializer.Deserialize<DependencySettings>(reader);
+                Dependencies = dependencySettings.SharedDependencies;
+                MultiFrameworkDependencies = dependencySettings.MultiFrameworkDependencies;
+            }
         }
 
         private static Assembly HandleResolveEvent(object sender, ResolveEventArgs args)
@@ -95,8 +112,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             {
                 AssemblyName assemblymName = new AssemblyName(args.Name);
                 // We try to resolve our dependencies on our own.
-                if (Dependencies.TryGetValue(assemblymName.Name, out Version requiredVersion)
-                    && (requiredVersion.Major >= assemblymName.Version.Major || string.Equals(assemblymName.Name, "Newtonsoft.Json", StringComparison.OrdinalIgnoreCase)))
+                if ((Dependencies.TryGetValue(assemblymName.Name, out Version requiredVersion) && requiredVersion.Major >= assemblymName.Version.Major)
+                    || string.Equals(assemblymName.Name, "Newtonsoft.Json", StringComparison.OrdinalIgnoreCase))
                 {
                     string requiredAssemblyPath = string.Empty;
                     if (MultiFrameworkDependencies.Contains(assemblymName.Name))

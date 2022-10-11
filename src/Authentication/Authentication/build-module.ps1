@@ -96,26 +96,29 @@ Copy-Item -Path "$cmdletsSrc/StartupScripts" -Filter *.ps1 -Recurse -Destination
 # Copy custom commands.
 Copy-Item -Path "$cmdletsSrc/custom" -Recurse -Destination $outDir
 
+# Copy dependencies.json config.
+Copy-Item -Path "$cmdletsSrc/Dependencies.json" -Recurse -Destination $outDeps
+
 # Core assemblies to include with cmdlets (Let PowerShell load them).
 $CoreAssemblies = @('Microsoft.Graph.Authentication.Core')
 
 # Copy each authentication.core asset to out directory and remember it.
 $Deps = [System.Collections.Generic.HashSet[string]]::new()
-Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netStandard/publish/" -File -Recurse |
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netStandard/publish/" |
 Where-Object { $_.Extension -in $copyExtensions } |
 Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDeps }
 
-Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netApp/publish/" -File -Recurse |
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netApp/publish/" |
 Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outCore }
 
-Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netFx/publish/" -File -Recurse |
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netFx/publish/" |
 Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDesktop }
 
 # Now copy each authentication asset, not taking any found in authentication.core.
-Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netStandard/publish/" -File -Recurse |
+Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netStandard/publish/" |
 Where-Object { -not $Deps.Contains($_.Name) -and $_.Extension -in $copyExtensions } |
 ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir }
 
