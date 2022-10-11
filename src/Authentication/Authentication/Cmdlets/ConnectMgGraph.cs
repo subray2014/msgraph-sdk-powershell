@@ -281,6 +281,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             GraphSessionInitializer.InitializeSession();
             GraphSession.Instance.DataStore = new DiskDataStore();
+            DependencyAssemblyResolver.Load();
         }
 
         /// <summary>

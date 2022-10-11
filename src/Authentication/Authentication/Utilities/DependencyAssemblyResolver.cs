@@ -2,7 +2,9 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Common;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -12,41 +14,36 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
     public static class DependencyAssemblyResolver
     {
         // Catalog our dependencies here to ensure we don't load anything else.
-        private static IReadOnlyDictionary<string, Version> Dependencies = new Dictionary<string, Version>
-        {
-            { "Azure.Core", new Version("1.25.0") },
-            { "Azure.Identity", new Version("1.6.1") },
-            { "Microsoft.Bcl.AsyncInterfaces", new Version("6.0.0") },
-            { "Microsoft.Graph.Core", new Version("2.0.11") },
-            { "Microsoft.Identity.Client", new Version("4.46.0") },
-            { "Microsoft.Identity.Client.Extensions.Msal", new Version("2.23.0") },
-            { "Microsoft.IdentityModel.Abstractions", new Version("6.22.0") },
-            { "Microsoft.IdentityModel.JsonWebTokens", new Version("6.22.0") },
-            { "Microsoft.IdentityModel.Logging", new Version("6.22.0") },
-            { "Microsoft.IdentityModel.Tokens", new Version("6.22.0") },
-            { "System.IdentityModel.Tokens.Jwt", new Version("6.22.0") },
-            { "System.Security.Cryptography.ProtectedData", new Version("6.0.0") },
-            { "Newtonsoft.Json", new Version("13.0.1") },
-            { "System.Text.Json", new Version("6.0.5") },
-            { "System.Text.Encodings.Web", new Version("6.0.0") },
-            { "System.Threading.Tasks.Extensions", new Version("4.5.4") },
-            { "System.Diagnostics.DiagnosticSource", new Version("4.0.4") },
-            { "System.Runtime.CompilerServices.Unsafe", new Version("4.0.4") },
-            { "System.Memory", new Version("4.0.1") },
-            { "System.Buffers", new Version("4.0.2") },
-            { "System.Numerics.Vectors", new Version("4.1.3") },
-            { "System.Net.Http.WinHttpHandler", new Version("6.0.0") }
-        };
+        private static IDictionary<string, Version> Dependencies = new ConcurrentDictionary<string, Version>(StringComparer.CurrentCultureIgnoreCase);
+        //{
+            //{ "Azure.Core", new Version("1.25.0") },
+            //{ "Azure.Identity", new Version("1.6.1") },
+            //{ "Microsoft.Bcl.AsyncInterfaces", new Version("6.0.0") },
+            //{ "Microsoft.Graph.Core", new Version("2.0.11") },
+            //{ "Microsoft.Identity.Client", new Version("4.46.0") },
+            //{ "Microsoft.Identity.Client.Extensions.Msal", new Version("2.23.0") },
+            //{ "Microsoft.IdentityModel.Abstractions", new Version("6.22.0") },
+            //{ "Microsoft.IdentityModel.JsonWebTokens", new Version("6.22.0") },
+            //{ "Microsoft.IdentityModel.Logging", new Version("6.22.0") },
+            //{ "Microsoft.IdentityModel.Tokens", new Version("6.22.0") },
+            //{ "System.IdentityModel.Tokens.Jwt", new Version("6.22.0") },
+            //{ "System.Security.Cryptography.ProtectedData", new Version("6.0.0") },
+            //{ "Newtonsoft.Json", new Version("13.0.1") },
+            //{ "System.Text.Json", new Version("6.0.5") },
+            //{ "System.Text.Encodings.Web", new Version("6.0.0") },
+            //{ "System.Threading.Tasks.Extensions", new Version("4.5.4") },
+            //{ "System.Diagnostics.DiagnosticSource", new Version("4.0.4") },
+            //{ "System.Runtime.CompilerServices.Unsafe", new Version("4.0.4") },
+            //{ "System.Memory", new Version("4.0.1") },
+            //{ "System.Buffers", new Version("4.0.2") },
+            //{ "System.Numerics.Vectors", new Version("4.1.3") },
+            //{ "System.Net.Http.WinHttpHandler", new Version("6.0.0") }
+        //};
 
         /// <summary>
         /// Dependencies that need to be loaded per framework.
         /// </summary>
-        private static readonly IList<string> MultiFrameworkDependencies = new List<string> {
-            "Microsoft.Identity.Client",
-            "System.Security.Cryptography.ProtectedData",
-            "Microsoft.Graph.Core",
-            "System.Net.Http.WinHttpHandler"
-        };
+        private static IList<string> MultiFrameworkDependencies = new List<string>();
 
         // Set up the path to our dependency directory within the module.
         private static readonly string DependenciesDirPath = Path.GetFullPath(Path.Combine(
@@ -83,6 +80,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
         {
             // Remove our event hander when the module is unloaded.
             AppDomain.CurrentDomain.AssemblyResolve -= HandleResolveEvent;
+        }
+
+        internal static void Load()
+        {
+            DependencySettings dependencySettings = new DependencySettings();
+            Dependencies = dependencySettings.SharedDependencies;
+            MultiFrameworkDependencies = dependencySettings.MultiFrameworkDependencies;
         }
 
         private static Assembly HandleResolveEvent(object sender, ResolveEventArgs args)
