@@ -377,6 +377,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendFeatureUpdatesPause": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendQualityUpdatesPause": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/deviceConfigurations/microsoft.graph.getTargetedUsersAndDevices": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
@@ -446,6 +454,26 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/microsoft.graph.updateDefinitionValues": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile-id}/microsoft.graph.groupPolicyUploadedDefinitionFile/microsoft.graph.addLanguageFiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile-id}/microsoft.graph.groupPolicyUploadedDefinitionFile/microsoft.graph.remove": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile-id}/microsoft.graph.groupPolicyUploadedDefinitionFile/microsoft.graph.removeLanguageFiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile-id}/microsoft.graph.groupPolicyUploadedDefinitionFile/microsoft.graph.updateLanguageFiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile-id}/microsoft.graph.groupPolicyUploadedDefinitionFile/microsoft.graph.uploadNewVersion": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },

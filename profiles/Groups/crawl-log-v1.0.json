@@ -397,6 +397,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/versions/{listItemVersion-id}/microsoft.graph.documentSetVersion/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
     "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
@@ -521,6 +525,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
+    "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/versions/{listItemVersion-id}/microsoft.graph.documentSetVersion/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
     "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
@@ -550,6 +558,10 @@
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
     "/groups/{group-id}/drives/{drive-id}/root/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/listItem/versions/{listItemVersion-id}/microsoft.graph.documentSetVersion/microsoft.graph.restore": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
@@ -737,11 +749,123 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.addFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.assignLicense": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkGrantedPermissionsForApp": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.removeFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.renew": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.resetUnseenCount": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.subscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.unsubscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
     "/groups/{group-id}/members": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
     "/groups/{group-id}/members/{directoryObject-id}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.addFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.assignLicense": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkGrantedPermissionsForApp": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.removeFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.renew": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.resetUnseenCount": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.subscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.unsubscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}/microsoft.graph.group/microsoft.graph.validateProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
@@ -754,6 +878,62 @@
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
     "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.addFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.assignLicense": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkGrantedPermissionsForApp": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.removeFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.renew": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.resetUnseenCount": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.subscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.unsubscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}/microsoft.graph.group/microsoft.graph.validateProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
@@ -925,6 +1105,62 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.addFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.assignLicense": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkGrantedPermissionsForApp": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.removeFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.renew": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.resetUnseenCount": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.subscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.unsubscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/owners/{directoryObject-id}/microsoft.graph.group/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
     "/groups/{group-id}/owners/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
@@ -1074,6 +1310,10 @@
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
     "/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/{listItem-id}/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/{listItem-id}/versions/{listItemVersion-id}/microsoft.graph.documentSetVersion/microsoft.graph.restore": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
@@ -1429,11 +1669,123 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.addFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.assignLicense": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkGrantedPermissionsForApp": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.removeFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.renew": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.resetUnseenCount": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.subscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.unsubscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
     "/groups/{group-id}/transitiveMembers": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
     "/groups/{group-id}/transitiveMembers/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.addFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.assignLicense": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkGrantedPermissionsForApp": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.removeFavorite": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.renew": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.resetUnseenCount": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.subscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.unsubscribeByMail": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/transitiveMembers/{directoryObject-id}/microsoft.graph.group/microsoft.graph.validateProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
