@@ -96,6 +96,15 @@ jobs:
        ]
       SessionTimeout: 20
 
+  - task: PowerShell@2
+    displayName: 'Validate Authenticode Signature'
+    inputs:
+      targetType: 'inline'
+      pwsh: true
+      script: |
+        $ModulePsd1 = "$(ROLLUP_MODULE_PATH)/Microsoft.Graph.psd1"
+        ($ModulePsd1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
+
   - task: NuGetCommand@2
     displayName: 'Pack Roll-Up Module'
     inputs:
