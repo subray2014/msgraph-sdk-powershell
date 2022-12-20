@@ -2310,6 +2310,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action softDelete
+      operationId: chats.messages_softDelete
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: chats.messages_undoSoftDelete
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -2998,6 +3056,80 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action softDelete
+      operationId: chats.messages.replies_softDelete
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: chats.messages.replies_undoSoftDelete
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/messages/{chatMessage-id}/replies/microsoft.graph.delta()':
     get:
       tags:
@@ -16627,6 +16759,80 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action softDelete
+      operationId: teams.channels.messages_softDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: teams.channels.messages_undoSoftDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -17395,6 +17601,96 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action softDelete
+      operationId: teams.channels.messages.replies_softDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: teams.channels.messages.replies_undoSoftDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/microsoft.graph.delta()':
     get:
       tags:
@@ -21671,6 +21967,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action softDelete
+      operationId: teams.primaryChannel.messages_softDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: teams.primaryChannel.messages_undoSoftDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -22359,6 +22713,80 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action softDelete
+      operationId: teams.primaryChannel.messages.replies_softDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: teams.primaryChannel.messages.replies_undoSoftDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/microsoft.graph.delta()':
     get:
       tags:
